@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<request xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <application_file>
+    LenderX Platform API version 2024.01 1/26/2024 14
+    <borrower_first_name>Test</borrower_first_name>
+    <borrower_last_name>Order</borrower_last_name>
+    <borrower_middle_name></borrower_middle_name>
+    <borrower_home_phone>08105757513</borrower_home_phone>
+    <borrower_work_phone>08105757513</borrower_work_phone>
+    <borrower_mobile_phone>08105757513</borrower_mobile_phone>
+    <borrower_email></borrower_email>
+    <coborrower_first_name>Sukh</coborrower_first_name>
+    <coborrower_middle_name></coborrower_middle_name>
+    <coborrower_last_name>veer</coborrower_last_name>
+    <coborrower_home_phone>08105757513</coborrower_home_phone>
+    <coborrower_work_phone>08105757513</coborrower_work_phone>
+    <coborrower_mobile_phone>08105757513</coborrower_mobile_phone>
+    <coborrower_email></coborrower_email>
+    <real_estate_agent_first_name>veer</real_estate_agent_first_name>
+    <real_estate_agent_middle_name></real_estate_agent_middle_name>
+    <real_estate_agent_last_name>veer1</real_estate_agent_last_name>
+    <real_estate_agent_home_phone>7033471111</real_estate_agent_home_phone>
+    <real_estate_agent_work_phone>7033471111</real_estate_agent_work_phone>
+    <real_estate_agent_cell_phone>7033471111</real_estate_agent_cell_phone>
+    <real_estate_agent_email></real_estate_agent_email>
+    <address>
+      <zip>90017</zip>
+      <city>Los Angeles</city>
+      <state_abbrev>CA</state_abbrev>
+      <line1>1 Test St.</line1>
+      <line2></line2>
+    </address>
+    <investors>
+      <available_investor_id>99</available_investor_id>
+      <available_investor_id>100</available_investor_id>
+    </investors>
+    <loan_type_value>conventional</loan_type_value>
+    <property_type_id>4</property_type_id>
+    <loan_amount>150000</loan_amount>
+    <loan_number>234123123</loan_number>
+    <loan_officer_id>99995</loan_officer_id>
+    <loan_programs>1</loan_programs>
+    <loan_purpose_value>Purchase</loan_purpose_value>
+    <purchase_price>199999</purchase_price>
+    <estimated_value>0</estimated_value>
+    <watchers>99999</watchers>
+    <watchers>99998</watchers>
+    <extension></extension>
+    <do_not_submit_to_ead>false</do_not_submit_to_ead>
+    <do_not_submit_to_ucdp>false</do_not_submit_to_ucdp>
+    <duplicate_borrower_name>0</duplicate_borrower_name>
+    <duplicate_loan_number>0</duplicate_loan_number>
+    <duplicate_property_address>0</duplicate_property_address>
+  </application_file>
+  <comments>Test Order instructions</comments>
+  <forms>
+    <appraisal_type_value>1004UniformResidentialAppraisal</appraisal_type_value>
+    <loan_type_value></loan_type_value>
+    <description>1004 - Single Family Residence</description>
+    <item_id></item_id>
+    <amount>444</amount>
+    <quoted_amount></quoted_amount>
+    <appraisal_type_value>1004UniformResidentialAppraisal</appraisal_type_value>
+    <loan_type_value></loan_type_value>
+    <description>1004 - Single Family Residence</description>
+    <item_id></item_id>
+    <amount>444</amount>
+    <quoted_amount></quoted_amount>
+  </forms>
+  <purchase_contract>723048a6-e8a7-11e6-bba6-2a93d14df9ca</purchase_contract>
+  <lender_requested_delivery_date>2025-02-09</lender_requested_delivery_date>
+  <borrower_email>test@est.com</borrower_email>
+  <borrower_enters_payment_info>true</borrower_enters_payment_info>
+</request>
