@@ -43,7 +43,7 @@ def update_order(credentials,order_id):
             "refundable": true
         }
     ],
-    "application_file_id": "250567",
+    "application_file_id": "250571"
    }'''
     message = build_message_string("PUT", "", resource, "", f"x-cor-auth-userid:{credentials.LXUser}", message_dt)
     message = calculate_corvisa_signature(message, credentials.APISecret)
@@ -61,7 +61,7 @@ def updateOrder():
     APIKey = "E5DEsSvAAgKowf52BjJqAg"
     APISecret = "mupojP8O3yCkQX3mWv2nlA"
     BaseURL = "https://app.sandbox1.lenderx-labs.com"
-    order_id="255939"
+    order_id="255943"
 
     # Create a credentials object
     cred = XCredentials(LXUser, APIKey, APISecret, BaseURL)

@@ -41,14 +41,15 @@ def update_lx_order(credentials):
         <expanded_description>The 1004 is the most commonly ordered residential form appraisal. This is an appraisal of a single family residence or a one-unit property with an accessory unit; including a unit in a planned unit development (PUD).This report is completed on the Uniform Residential Appraisal Report form and provides the benefit of a full interior and exterior inspection of the subject property. As with all of the appraisal report products, the intended use is to providean opinion of the market value of the subject property. Report to include: Completed six page URAR form with all appropriate certifications and limiting conditions. Completed 1004MC Market Condition Addendum. </expanded_description>
         <quoted_amount></quoted_amount>
         <refundable>true</refundable>
+
         <no_delete>false</no_delete>
-        <display_order>974550</display_order>
-        <appraisal_type_value>Conventional-AppraisalDeskReview2Day</appraisal_type_value>
+        <display_order>1480</display_order>
+        <appraisal_type_value>1025-SmallResidentialIncomeProperty</appraisal_type_value>
         <loan_type_value>conventional</loan_type_value>
-        <description>Appraisal Desk Review - 2 Day</description>
+        <description>1025 - Small Residential Income Property Report</description>
         <item_id />
-        <amount>100</amount>
-        <expanded_description>This form provides a collateral risk assessment based on an analysis of a prior appraisal (or other valuation product). A physical inspection of the subject property and comparables is not performed.</expanded_description>
+        <amount>634</amount>
+        <expanded_description>This report is intended to provide an opinion of the market value of any two to four unit residential property. This product provides the benefit of a full interior and exterior inspection of all units in the subject dwelling.  In addition to basic property and improvement information, this report provides analysis of competitive rental properties and a rental schedule in addition to the typical sales comparison analysis. Attachments include: Completed  1025 form with all appropriate certifications and limiting conditions. Completed 1004MC Market Condition Addendum. Completed Rental Survey Form 1007. Subject property photographs including a front, rear and street scene, and photographs of any comparable rentals, comparable listings, and comparable sales. Location map detailing the locations of the subject and all rentals, listings and sales utilized as comparable properties in the report. Floor-plan sketch with exterior dimensions, gross living area calculations, and labels of room locations for each unit.</expanded_description>
         <quoted_amount></quoted_amount>
         <refundable>true</refundable>
     </forms>

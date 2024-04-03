@@ -91,6 +91,18 @@ def create_lx_order(credentials):
             "expanded_description": "The 1004 is the most commonly ordered residential form appraisal. This is an appraisal of a single family residence or a one-unit property with an accessory unit; including a unit in a planned unit development (PUD).This report is completed on the Uniform Residential Appraisal Report form and provides the benefit of a full interior and exterior inspection of the subject property. As with all of the appraisal report products, the intended use is to providean opinion of the market value of the subject property. Report to include: Completed six page URAR form with all appropriate certifications and limiting conditions. Completed 1004MC Market Condition Addendum.",
             "quoted_amount": "",
             "refundable": true
+        },
+        {
+            "no_delete": false,
+            "display_order": 974550,
+            "appraisal_type_value": "FannieMae-1004HybridUniformResidentialAppraisal",
+            "loan_type_value": "conventional",
+            "description": "Fannie Mae - 1004 Hybrid Appraisal",
+            "item_id": "",
+            "amount": "300",
+            "expanded_description": "A 1004 Hybrid appraisal is completed by an appraiser using data from a recent property data collection (PDC) and other third party resources such as public records and MLS.  The appraiser does not physically inspect the property as part of this assignment.  The report includes:  a completed 1004 Hybrid appraisal form with all appropriate certifications and limiting conditions, interior and exterior photographs of the subject property as required by Fannie Mae and the client, exterior photos of the comparables, a floor plan, gross living area calculations, and a location map identifying the subject property and comparables.  (NOTE:  A completed PDC is required before a 1004 Hybrid appraisal can be completed.)",
+            "quoted_amount": "",
+            "refundable": true
         }
     ],
     "borrower_email": "test@test.com",
