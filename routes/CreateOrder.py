@@ -62,7 +62,7 @@ def create_lx_order(credentials):
         "loan_type_value": "conventional",
         "property_type_id": 1,
         "loan_amount": 150000,
-        "loan_number": "234123123",
+        "loan_number": "2311000478",
         "loan_officer_id": "62160",
         "loan_programs": 1,
         "loan_purpose_value": "Purchase",
@@ -126,6 +126,7 @@ def createOrder():
     APIKey = request.args.get('APIKey')
     APISecret = request.args.get('APISecret')
     BaseURL = request.args.get('BaseURL')
+    
 
     # Create a credentials object
     cred = XCredentials(lx_user, APIKey, APISecret, BaseURL)

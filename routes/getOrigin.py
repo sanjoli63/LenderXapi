@@ -9,12 +9,12 @@ import requests
 app = Blueprint('getOrigin', __name__)
 CORS(app)
 
-def add_cors_headers(response):
-    # Replace '*' with your frontend domain if you want to restrict access
-    response.headers['Access-Control-Allow-Origin'] = ' https://c768-122-179-203-31.ngrok-free.app'
-    response.headers['Access-Control-Allow-Headers'] = 'Content-Type,Authorization'
-    response.headers['Access-Control-Allow-Methods'] = 'GET'
-    return response
+# def add_cors_headers(response):
+#     # Replace '*' with your frontend domain if you want to restrict access
+#     response.headers['Access-Control-Allow-Origin'] = ' https://c768-122-179-203-31.ngrok-free.app'
+#     response.headers['Access-Control-Allow-Headers'] = 'Content-Type,Authorization'
+#     response.headers['Access-Control-Allow-Methods'] = 'GET'
+#     return response
 
 @app.route('/api/getOrigin', methods=['GET'])
 def get_origin():
@@ -41,4 +41,4 @@ def get_origin():
     except http.client.HTTPException as e:
         return jsonify({'error': f'Failed to fetch origin data: {e}'}), 500
 
-app.after_request(add_cors_headers)
+# app.after_request(add_cors_headers)

@@ -9,6 +9,7 @@ from requests.exceptions import HTTPError
 import xml.etree.ElementTree as ET
 from Model.BaseResponse import BaseResponse
 from Model.XConvert import XConvert
+import json
 current_token = None
 
 def execute_lx_api_call(credentials, request, resource, parameters, action, content_type="text/x-json"):
@@ -238,4 +239,15 @@ def manage_token():
         print("Failed to obtain token.")
     return current_token
 
+def getTrasactionData(url):
+    token =manage_token()
+    url = f"{url}?view=complete"
+    headers = {
+    'Authorization': f'Bearer {token}'
+    }
+    
+    response = requests.request("GET", url, headers=headers)
+    data= response.text
+    print(data)
+    return json.loads(data)
 

@@ -1,14 +1,10 @@
-from flask import Blueprint,Flask, request, jsonify
-import hmac
-import base64
-import requests
-from hashlib import sha1
-from datetime import datetime
-from flask_cors import CORS 
 import json
+import requests
 from Comm.LenderXComm import execute_lx_api_call
+from flask import request , Blueprint,jsonify
+from flask_cors import CORS
 
-app = Blueprint('GetOrders', __name__) 
+app = Blueprint('getCannedComment', __name__) 
 CORS(app)
 
 class XCredentials:
@@ -18,22 +14,23 @@ class XCredentials:
         self.APIKey = APIKey
         self.BaseURL = BaseURL
 
-def get_orders(credentials):
-    return execute_lx_api_call(credentials, None, "/appraisal/order", "loan_number=2311000478", "GET","text/x-json")
+def get_comment(credentials,appfile_id):
+    return execute_lx_api_call(credentials, None, f"/appfile/{appfile_id}/cannedcomment", "", "GET")
 
-@app.route('/api/get_orders', methods=['GET'])
-def api_get_orders():
-    # Get query parameters
+
+@app.route('/api/cannedcomment', methods=['GET'])
+def get_canned_comment():
+    # TODO implement
     lx_user = request.args.get('lx_user')
     APIKey = request.args.get('APIKey')
     APISecret = request.args.get('APISecret')
     BaseURL = request.args.get('BaseURL')
-
+    appfile_id = request.args.get('appfile_id')
+    
     # Create a credentials object
     cred = XCredentials(lx_user, APIKey, APISecret, BaseURL)
-
-    # Get loan types
-    resp = get_orders(cred)
-   
-
-    return json.loads(resp)
+    
+     
+    result = get_comment(cred,appfile_id)
+    return json.loads(result)
+    

@@ -3,8 +3,9 @@ import json
 from flask_cors import CORS 
 import requests
 from routes.getOrigin import get_origin
+
 app = Blueprint('gatherdata', __name__) 
-url = 'http://127.0.0.1:5000/api'
+url = 'http://127.0.0.1:7000/api'
 lx_user="shubham@vidyatech.com"
 APIKey="E5DEsSvAAgKowf52BjJqAg"
 APISecret="mupojP8O3yCkQX3mWv2nlA"

@@ -2,6 +2,7 @@ from flask import Blueprint,Flask, request, jsonify
 import hmac
 import base64
 import requests
+import json
 from hashlib import sha1
 from datetime import datetime
 from flask_cors import CORS 
@@ -18,7 +19,7 @@ class XCredentials:
         self.BaseURL = BaseURL
 
 def get_permission(credentials):
-    return execute_lx_api_call(credentials, None, "/user/me/preferences", "", "GET","text/x-json")
+    return execute_lx_api_call(credentials, None, "/user/me/permissions", "", "GET","text/x-json")
 
 
 @app.route('/api/permissions', methods=['GET'])
@@ -35,5 +36,5 @@ def api_get_loan_permission():
     # Get loan types
     resp1 =get_permission(cred)
 
-    return jsonify(resp1)
+    return json.loads(resp1)
 
