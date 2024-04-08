@@ -1,6 +1,8 @@
 from flask import Blueprint,Flask, request, jsonify
 from Comm.LenderXComm import getTrasactionData
 from Comm.createLXOrder import createOrder
+from Comm.GetAppFile import api_get_appfile
+from Comm.UpdateLXOrder import updateLXOrder
 from flask_cors import CORS 
 
 app = Blueprint('webhook', __name__) 
@@ -53,7 +55,22 @@ def order_creation(url):
         'instructions':data['options']['customObjectOption'][1]['CustomLoanDetails'].get('instruction'),
         'due_date':data['options']['customObjectOption'][1]['CustomLoanDetails'].get('dueDate'),
     }
-    result= createOrder(dataobject)
+    credentials={
+        'lx_user':"shubham@vidyatech.com",
+        'APIKey':"E5DEsSvAAgKowf52BjJqAg",
+        "APISecret":"mupojP8O3yCkQX3mWv2nlA",
+        "BaseURL":"https://app.sandbox1.lenderx-labs.com",
+    }
+    loan_number= data["loan"].get("loanNumber")
+    id =api_get_appfile(credentials,loan_number)
+    # print(dataobject['city'])
+    if id != '':
+        app_id= id['app_id']
+        order_id=id['order_id']
+        
+        result=updateLXOrder(credentials,dataobject,app_id,order_id)
+    else:
+        result= createOrder(credentials,dataobject)
     
     return result
    

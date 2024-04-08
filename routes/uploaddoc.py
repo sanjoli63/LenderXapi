@@ -36,16 +36,15 @@ def file_to_base64(file_path):
 def doc_add(credentials,orderid,docdata):
     message_dt = datetime.utcnow()
     resource = f"/appraisal/order/{orderid}/documents"
-    request = f'''<?xml version="1.0"?>
-<request xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <document>
-        <description>{docdata.description}</description>
-        <document_type_id>{docdata.type}</document_type_id>
-        <name>{docdata.name}</name>
-        <encoded_filedata>{docdata.data}</encoded_filedata>
-        <document_id>13242353</document_id>
-   </document>
-</request>'''
+    request = json.dumps({
+        "document":{
+            "description":docdata.description,
+            "document_type_id":docdata.type,
+            "name":docdata.name,
+            "encoded_filedata":docdata.data,
+            "document_id":docdata.id,
+        }
+    })
     xml_str = request
     message = build_message_string("POST", "", resource, "", f"x-cor-auth-userid:{credentials.LXUser}", message_dt)
     message = calculate_corvisa_signature(message, credentials.APISecret)

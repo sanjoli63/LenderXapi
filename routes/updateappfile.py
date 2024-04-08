@@ -6,7 +6,7 @@ import hashlib
 import hmac
 import xml.etree.ElementTree as ET
 from io import BytesIO
-from flask import Flask,Blueprint, jsonify
+from flask import Flask,Blueprint,request, jsonify
 from Comm.LenderXComm import build_message_string, calculate_corvisa_signature, perform_lender_x_call, perform_lender_x_json_call
 from Model.BaseResponse import BaseResponse
 from Model.XConvert import XConvert
@@ -80,14 +80,14 @@ def update_order(credentials,app_id):
 
 @app.route('/api/updateAppfile', methods=['GET'])
 def updateOrder():
-    LXUser = "shubham@vidyatech.com"
-    APIKey = "E5DEsSvAAgKowf52BjJqAg"
-    APISecret = "mupojP8O3yCkQX3mWv2nlA"
-    BaseURL = "https://app.sandbox1.lenderx-labs.com"
-    app_id= "250567"
+    lx_user = request.args.get('lx_user')
+    APIKey = request.args.get('APIKey')
+    APISecret = request.args.get('APISecret')
+    BaseURL = request.args.get('BaseURL')
+    app_id= request.args.get('app_id')
 
     # Create a credentials object
-    cred = XCredentials(LXUser, APIKey, APISecret, BaseURL)
+    cred = XCredentials(lx_user, APIKey, APISecret, BaseURL)
 
     # Get loan types
     resp = update_order(cred,app_id)

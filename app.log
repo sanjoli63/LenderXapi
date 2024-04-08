@@ -1620,3 +1620,2837 @@ Traceback (most recent call last):
     log_failed_call(endpoint,req_call,response, str(e))
                                       ^^^^^^^^
 UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-05 16:05:53,412 - ERROR - Exception on /api/cannedcomment [GET]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 50, in perform_lender_x_json_call
+    response.raise_for_status()
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://app.sandbox1.lenderx-labs.com/communication
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 67, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\PostComment.py", line 50, in canned_comment
+    result = post_comment(cred)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\PostComment.py", line 36, in post_comment
+    return execute_lx_api_call(credentials, body, "/communication", "", "POST")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 20, in execute_lx_api_call
+    return perform_lender_x_json_call(f"{credentials.BaseURL}{resource}?{parameters}", action, credentials.APIKey, credentials.LXUser, message, message_dt, request, content_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 60, in perform_lender_x_json_call
+    raise Exception(response_text)
+Exception: 
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>LenderX</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="Industry-leading appraisal management software for mortgage professionals nationwide.">
+        <script type="text/javascript">
+            window.hsConversationsSettings = {
+                loadImmediately: false,
+                inlineEmbedSelector: '#chatbtn',
+                enableWidgetCookieBanner: true
+            };
+        </script>
+        <script type="text/javascript" id="hs-script-loader" async defer src="https://js.hs-scripts.com/45474062.js"></script>
+<!--X-->
+<link rel="shortcut icon" href="/static/1711491180/images/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon" />
+
+<!--ExtJS Base Theme-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/xtheme-gray-extend.css" />
+
+<!--Main style and overrides jumbo-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/animation.css" />
+
+<!--Used to build and display html for QC Forms-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/960_24_col.css" />
+
+<!--Appraisal View Calendar Special-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/calendar.css" />
+
+	</head>
+
+	<body class="wrapped">
+
+		<div id="pagewrap">
+
+			
+
+
+	
+
+
+<div class="viewport-header" >
+
+    <a href="/" class="company-logo">
+        
+        
+    </a>
+
+    <div class="contact">
+
+		<div class="icons">
+
+            <img class="logo lenderx" alt="LenderX logo" src="/static/images/logo/LenderX-logo.svg" />
+
+            
+
+                
+
+                <script type='text/javascript'>
+
+                    (function(){
+
+                        var afterAPILoad = function(){
+
+                            var chatButtonId = 'chatbtn',
+
+                                widgetVisible = false,
+
+                                chatButtons = document.querySelectorAll(['#', chatButtonId].join('')),
+
+                                chatButtonDefaultText = 'Chat',
+
+                                createChatBtn = function(){
+                                    var btn = document.createElement('div'),
+                                        btnContent = document.createTextNode(chatButtonDefaultText);
+
+                                    btn.setAttribute('id', chatButtonId);
+                                    btn.setAttribute('class', chatButtonId);
+                                    btn.appendChild(btnContent);
+                                    btn.addEventListener('click', function(){
+                                        if (widgetVisible === true) {
+                                            window.HubSpotConversations.widget.remove();
+                                            widgetVisible = false;
+                                            this.textContent = chatButtonDefaultText;
+                                        } else {
+                                            window.HubSpotConversations.widget.load();
+                                            widgetVisible = true;
+                                            this.textContent = 'Close Chat';
+                                        }
+                                    });
+                                    return btn;
+                                };
+
+                            if (chatButtons.length === 0) {
+                                document.body.append(createChatBtn());
+                            }
+                        };
+
+                        if (window.HubSpotConversations) {
+                            afterAPILoad();
+                        } else {
+                            window.hsConversationsOnReady = [
+                                function(){
+                                    afterAPILoad();
+                                }
+                            ];
+                        }
+
+                    })();
+
+                </script>
+
+                
+
+            
+
+            
+                
+    <a target="_blank" href="/docs/kb/lender/index.html">
+
+<img src="/static/images/training.png" title="Training Resources" /></a>
+
+            
+
+        </div>
+
+        <div class="support-phone">
+            
+            
+            
+            
+            <div class="support-phone-content">
+            
+                <span style="font-weight: bold;">Software&nbsp;Support</span><br/>
+            
+            <b>Phone</b>:&nbsp;1.877.263.0220
+            <br/><b>Hours</b>:&nbsp;Mon - Fri 8:00AM - 6:00PM CT
+            
+                <br/><b>Contact PIN</b>: 62160
+            
+            </div>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+			<div class="contentwrap">
+
+
+
+				
+        <style>
+    .graphic {
+        height: 300px;
+        margin-bottom: 10px;
+    }
+
+    .suggestions ol {
+        list-style-position: inside;
+        list-style-type: decimal;
+    }
+    .suggestions li {
+        font-size: 16px;
+    }
+</style>
+<div style="text-align:center;">
+
+    <h1 style="font-size:40px; font-weight:800">400 - Caught exception in Blackjack::Controller::Communication->base "Can't use an undefined value as a HASH reference at /apps/sl-blackjack/lib/Blackjack/Controller/Communication.pm line 76, <$fh> line 1."</h1>
+    <img src="/static/images/errorcabinet.png" class="graphic" />
+    <div class="suggestions">
+        <h1>Here are some suggestions to get things back on track:</h1>
+        <ol>
+            <li>Double-check the web address for typos.</li>
+            <li>Click <a href="/">here</a> to return to the home page.</li>
+            <li>Contact LenderX Support with any questions by calling 877.263.0220 or emailing <a href="mailto:support@lenderx.com">support@lenderx.com</a>.</li>
+        </ol>
+    </div>
+</div>
+
+    
+
+			</div>
+		</div>
+
+		<div class="template footer">Copyright&copy; 2021. LenderX, LLC. All rights reserved. | <a class="privacyPolicy" href="https://lenderx.com/privacy-policy/" target="_blank">Privacy Policy</a></div>
+		
+
+	</body>
+</html>
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 71, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-05 16:06:27,336 - INFO - Successful call to getCannedComment.get_canned_comment  endpoint
+2024-04-05 16:06:27,337 - INFO - Request Call :<Request 'http://127.0.0.1:5000/api/cannedcomment?lx_user=shubham@vidyatech.com&APIKey=E5DEsSvAAgKowf52BjJqAg&APISecret=mupojP8O3yCkQX3mWv2nlA&BaseURL=https://app.sandbox1.lenderx-labs.com&appfile_id=250581' [GET]>
+2024-04-05 16:06:27,338 - INFO - response status: {'success': 1, 'data': [{'company_id': 19391, 'is_active': 1, 'create_user_id': 60142, 'create_date': '2017-04-04 10:30:51.069696-05', 'canned_comment_id': 7, 'comment_text': 'this is test text for comment 1', 'comment_name': 'test canned 1 (text only)'}, {'company_id': 19391, 'is_active': 1, 'create_user_id': 60142, 'create_date': '2017-04-04 10:31:24.773675-05', 'canned_comment_id': 8, 'comment_text': 'this is test text for comment 2', 'comment_name': 'test canned 2 (calendar only)'}, {'company_id': 19391, 'is_active': 1, 'create_user_id': 60142, 'create_date': '2017-04-04 10:32:11.889664-05', 'canned_comment_id': 9, 'comment_text': 'this is test text for comment 3', 'comment_name': 'test canned 3 (text and calendar)'}, {'company_id': 19391, 'is_active': 1, 'create_user_id': 60142, 'create_date': '2017-04-18 08:06:47.966447-05', 'canned_comment_id': 11, 'comment_text': 'this is test text for comment 4', 'comment_name': 'test canned 4 (no responses)'}], 'total': 4, 'meta': {'sort': 'canned_comment_id', 'limit': 25, 'total': 4, 'start': 0, 'dir': 'asc'}}
+2024-04-05 16:12:30,185 - ERROR - Exception on /api/comment [GET]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 50, in perform_lender_x_json_call
+    response.raise_for_status()
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://app.sandbox1.lenderx-labs.com/communication
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 67, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\PostComment.py", line 50, in canned_comment
+    result = post_comment(cred)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\PostComment.py", line 36, in post_comment
+    return execute_lx_api_call(credentials, body, "/communication", "", "POST")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 20, in execute_lx_api_call
+    return perform_lender_x_json_call(f"{credentials.BaseURL}{resource}?{parameters}", action, credentials.APIKey, credentials.LXUser, message, message_dt, request, content_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 60, in perform_lender_x_json_call
+    raise Exception(response_text)
+Exception: 
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>LenderX</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="Industry-leading appraisal management software for mortgage professionals nationwide.">
+        <script type="text/javascript">
+            window.hsConversationsSettings = {
+                loadImmediately: false,
+                inlineEmbedSelector: '#chatbtn',
+                enableWidgetCookieBanner: true
+            };
+        </script>
+        <script type="text/javascript" id="hs-script-loader" async defer src="https://js.hs-scripts.com/45474062.js"></script>
+<!--X-->
+<link rel="shortcut icon" href="/static/1711491180/images/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon" />
+
+<!--ExtJS Base Theme-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/xtheme-gray-extend.css" />
+
+<!--Main style and overrides jumbo-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/animation.css" />
+
+<!--Used to build and display html for QC Forms-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/960_24_col.css" />
+
+<!--Appraisal View Calendar Special-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/calendar.css" />
+
+	</head>
+
+	<body class="wrapped">
+
+		<div id="pagewrap">
+
+			
+
+
+	
+
+
+<div class="viewport-header" >
+
+    <a href="/" class="company-logo">
+        
+        
+    </a>
+
+    <div class="contact">
+
+		<div class="icons">
+
+            <img class="logo lenderx" alt="LenderX logo" src="/static/images/logo/LenderX-logo.svg" />
+
+            
+
+                
+
+                <script type='text/javascript'>
+
+                    (function(){
+
+                        var afterAPILoad = function(){
+
+                            var chatButtonId = 'chatbtn',
+
+                                widgetVisible = false,
+
+                                chatButtons = document.querySelectorAll(['#', chatButtonId].join('')),
+
+                                chatButtonDefaultText = 'Chat',
+
+                                createChatBtn = function(){
+                                    var btn = document.createElement('div'),
+                                        btnContent = document.createTextNode(chatButtonDefaultText);
+
+                                    btn.setAttribute('id', chatButtonId);
+                                    btn.setAttribute('class', chatButtonId);
+                                    btn.appendChild(btnContent);
+                                    btn.addEventListener('click', function(){
+                                        if (widgetVisible === true) {
+                                            window.HubSpotConversations.widget.remove();
+                                            widgetVisible = false;
+                                            this.textContent = chatButtonDefaultText;
+                                        } else {
+                                            window.HubSpotConversations.widget.load();
+                                            widgetVisible = true;
+                                            this.textContent = 'Close Chat';
+                                        }
+                                    });
+                                    return btn;
+                                };
+
+                            if (chatButtons.length === 0) {
+                                document.body.append(createChatBtn());
+                            }
+                        };
+
+                        if (window.HubSpotConversations) {
+                            afterAPILoad();
+                        } else {
+                            window.hsConversationsOnReady = [
+                                function(){
+                                    afterAPILoad();
+                                }
+                            ];
+                        }
+
+                    })();
+
+                </script>
+
+                
+
+            
+
+            
+                
+    <a target="_blank" href="/docs/kb/lender/index.html">
+
+<img src="/static/images/training.png" title="Training Resources" /></a>
+
+            
+
+        </div>
+
+        <div class="support-phone">
+            
+            
+            
+            
+            <div class="support-phone-content">
+            
+                <span style="font-weight: bold;">Software&nbsp;Support</span><br/>
+            
+            <b>Phone</b>:&nbsp;1.877.263.0220
+            <br/><b>Hours</b>:&nbsp;Mon - Fri 8:00AM - 6:00PM CT
+            
+                <br/><b>Contact PIN</b>: 62160
+            
+            </div>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+			<div class="contentwrap">
+
+
+
+				
+        <style>
+    .graphic {
+        height: 300px;
+        margin-bottom: 10px;
+    }
+
+    .suggestions ol {
+        list-style-position: inside;
+        list-style-type: decimal;
+    }
+    .suggestions li {
+        font-size: 16px;
+    }
+</style>
+<div style="text-align:center;">
+
+    <h1 style="font-size:40px; font-weight:800">400 - Caught exception in Blackjack::Controller::Communication->base "Can't use an undefined value as a HASH reference at /apps/sl-blackjack/lib/Blackjack/Controller/Communication.pm line 76, <$fh> line 1."</h1>
+    <img src="/static/images/errorcabinet.png" class="graphic" />
+    <div class="suggestions">
+        <h1>Here are some suggestions to get things back on track:</h1>
+        <ol>
+            <li>Double-check the web address for typos.</li>
+            <li>Click <a href="/">here</a> to return to the home page.</li>
+            <li>Contact LenderX Support with any questions by calling 877.263.0220 or emailing <a href="mailto:support@lenderx.com">support@lenderx.com</a>.</li>
+        </ol>
+    </div>
+</div>
+
+    
+
+			</div>
+		</div>
+
+		<div class="template footer">Copyright&copy; 2021. LenderX, LLC. All rights reserved. | <a class="privacyPolicy" href="https://lenderx.com/privacy-policy/" target="_blank">Privacy Policy</a></div>
+		
+
+	</body>
+</html>
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 71, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-05 16:28:15,983 - INFO - Successful call to getCannedComment.get_canned_comment  endpoint
+2024-04-05 16:28:15,984 - INFO - Request Call :<Request 'http://127.0.0.1:5000/api/cannedcomment?lx_user=shubham@vidyatech.com&APIKey=E5DEsSvAAgKowf52BjJqAg&APISecret=mupojP8O3yCkQX3mWv2nlA&BaseURL=https://app.sandbox1.lenderx-labs.com&appfile_id=250581' [GET]>
+2024-04-05 16:28:15,985 - INFO - response status: {'success': 1, 'data': [{'company_id': 19391, 'is_active': 1, 'create_user_id': 60142, 'create_date': '2017-04-04 10:30:51.069696-05', 'canned_comment_id': 7, 'comment_text': 'this is test text for comment 1', 'comment_name': 'test canned 1 (text only)'}, {'company_id': 19391, 'is_active': 1, 'create_user_id': 60142, 'create_date': '2017-04-04 10:31:24.773675-05', 'canned_comment_id': 8, 'comment_text': 'this is test text for comment 2', 'comment_name': 'test canned 2 (calendar only)'}, {'company_id': 19391, 'is_active': 1, 'create_user_id': 60142, 'create_date': '2017-04-04 10:32:11.889664-05', 'canned_comment_id': 9, 'comment_text': 'this is test text for comment 3', 'comment_name': 'test canned 3 (text and calendar)'}, {'company_id': 19391, 'is_active': 1, 'create_user_id': 60142, 'create_date': '2017-04-18 08:06:47.966447-05', 'canned_comment_id': 11, 'comment_text': 'this is test text for comment 4', 'comment_name': 'test canned 4 (no responses)'}], 'total': 4, 'meta': {'sort': 'canned_comment_id', 'limit': 25, 'total': 4, 'start': 0, 'dir': 'asc'}}
+2024-04-05 16:28:42,816 - ERROR - Exception on /api/comment [GET]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 50, in perform_lender_x_json_call
+    response.raise_for_status()
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://app.sandbox1.lenderx-labs.com/communication
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 67, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\PostComment.py", line 50, in canned_comment
+    result = post_comment(cred)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\PostComment.py", line 36, in post_comment
+    return execute_lx_api_call(credentials, body, "/communication", "", "POST")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 20, in execute_lx_api_call
+    return perform_lender_x_json_call(f"{credentials.BaseURL}{resource}?{parameters}", action, credentials.APIKey, credentials.LXUser, message, message_dt, request, content_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 60, in perform_lender_x_json_call
+    raise Exception(response_text)
+Exception: 
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>LenderX</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="Industry-leading appraisal management software for mortgage professionals nationwide.">
+        <script type="text/javascript">
+            window.hsConversationsSettings = {
+                loadImmediately: false,
+                inlineEmbedSelector: '#chatbtn',
+                enableWidgetCookieBanner: true
+            };
+        </script>
+        <script type="text/javascript" id="hs-script-loader" async defer src="https://js.hs-scripts.com/45474062.js"></script>
+<!--X-->
+<link rel="shortcut icon" href="/static/1711491180/images/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon" />
+
+<!--ExtJS Base Theme-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/xtheme-gray-extend.css" />
+
+<!--Main style and overrides jumbo-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/animation.css" />
+
+<!--Used to build and display html for QC Forms-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/960_24_col.css" />
+
+<!--Appraisal View Calendar Special-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/calendar.css" />
+
+	</head>
+
+	<body class="wrapped">
+
+		<div id="pagewrap">
+
+			
+
+
+	
+
+
+<div class="viewport-header" >
+
+    <a href="/" class="company-logo">
+        
+        
+    </a>
+
+    <div class="contact">
+
+		<div class="icons">
+
+            <img class="logo lenderx" alt="LenderX logo" src="/static/images/logo/LenderX-logo.svg" />
+
+            
+
+                
+
+                <script type='text/javascript'>
+
+                    (function(){
+
+                        var afterAPILoad = function(){
+
+                            var chatButtonId = 'chatbtn',
+
+                                widgetVisible = false,
+
+                                chatButtons = document.querySelectorAll(['#', chatButtonId].join('')),
+
+                                chatButtonDefaultText = 'Chat',
+
+                                createChatBtn = function(){
+                                    var btn = document.createElement('div'),
+                                        btnContent = document.createTextNode(chatButtonDefaultText);
+
+                                    btn.setAttribute('id', chatButtonId);
+                                    btn.setAttribute('class', chatButtonId);
+                                    btn.appendChild(btnContent);
+                                    btn.addEventListener('click', function(){
+                                        if (widgetVisible === true) {
+                                            window.HubSpotConversations.widget.remove();
+                                            widgetVisible = false;
+                                            this.textContent = chatButtonDefaultText;
+                                        } else {
+                                            window.HubSpotConversations.widget.load();
+                                            widgetVisible = true;
+                                            this.textContent = 'Close Chat';
+                                        }
+                                    });
+                                    return btn;
+                                };
+
+                            if (chatButtons.length === 0) {
+                                document.body.append(createChatBtn());
+                            }
+                        };
+
+                        if (window.HubSpotConversations) {
+                            afterAPILoad();
+                        } else {
+                            window.hsConversationsOnReady = [
+                                function(){
+                                    afterAPILoad();
+                                }
+                            ];
+                        }
+
+                    })();
+
+                </script>
+
+                
+
+            
+
+            
+                
+    <a target="_blank" href="/docs/kb/lender/index.html">
+
+<img src="/static/images/training.png" title="Training Resources" /></a>
+
+            
+
+        </div>
+
+        <div class="support-phone">
+            
+            
+            
+            
+            <div class="support-phone-content">
+            
+                <span style="font-weight: bold;">Software&nbsp;Support</span><br/>
+            
+            <b>Phone</b>:&nbsp;1.877.263.0220
+            <br/><b>Hours</b>:&nbsp;Mon - Fri 8:00AM - 6:00PM CT
+            
+                <br/><b>Contact PIN</b>: 62160
+            
+            </div>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+			<div class="contentwrap">
+
+
+
+				
+        <style>
+    .graphic {
+        height: 300px;
+        margin-bottom: 10px;
+    }
+
+    .suggestions ol {
+        list-style-position: inside;
+        list-style-type: decimal;
+    }
+    .suggestions li {
+        font-size: 16px;
+    }
+</style>
+<div style="text-align:center;">
+
+    <h1 style="font-size:40px; font-weight:800">400 - Caught exception in Blackjack::Controller::Communication->base "Can't use an undefined value as a HASH reference at /apps/sl-blackjack/lib/Blackjack/Controller/Communication.pm line 76, <$fh> line 1."</h1>
+    <img src="/static/images/errorcabinet.png" class="graphic" />
+    <div class="suggestions">
+        <h1>Here are some suggestions to get things back on track:</h1>
+        <ol>
+            <li>Double-check the web address for typos.</li>
+            <li>Click <a href="/">here</a> to return to the home page.</li>
+            <li>Contact LenderX Support with any questions by calling 877.263.0220 or emailing <a href="mailto:support@lenderx.com">support@lenderx.com</a>.</li>
+        </ol>
+    </div>
+</div>
+
+    
+
+			</div>
+		</div>
+
+		<div class="template footer">Copyright&copy; 2021. LenderX, LLC. All rights reserved. | <a class="privacyPolicy" href="https://lenderx.com/privacy-policy/" target="_blank">Privacy Policy</a></div>
+		
+
+	</body>
+</html>
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 71, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-05 16:38:37,409 - INFO - Successful call to getCannedComment.get_canned_comment  endpoint
+2024-04-05 16:38:37,410 - INFO - Request Call :<Request 'http://127.0.0.1:5000/api/cannedcomment?lx_user=shubham@vidyatech.com&APIKey=E5DEsSvAAgKowf52BjJqAg&APISecret=mupojP8O3yCkQX3mWv2nlA&BaseURL=https://app.sandbox1.lenderx-labs.com&appfile_id=250581' [GET]>
+2024-04-05 16:38:37,411 - INFO - response status: {'success': 1, 'data': [], 'total': '0'}
+2024-04-05 16:39:01,866 - INFO - Successful call to getCannedComment.get_canned_comment  endpoint
+2024-04-05 16:39:01,866 - INFO - Request Call :<Request 'http://127.0.0.1:5000/api/cannedcomment?lx_user=shubham@vidyatech.com&APIKey=E5DEsSvAAgKowf52BjJqAg&APISecret=mupojP8O3yCkQX3mWv2nlA&BaseURL=https://app.sandbox1.lenderx-labs.com&appfile_id=250581' [GET]>
+2024-04-05 16:39:01,867 - INFO - response status: {'success': 1, 'data': [{'company_id': 19391, 'is_active': 1, 'create_user_id': 60142, 'create_date': '2017-04-04 10:30:51.069696-05', 'canned_comment_id': 7, 'comment_text': 'this is test text for comment 1', 'comment_name': 'test canned 1 (text only)'}, {'company_id': 19391, 'is_active': 1, 'create_user_id': 60142, 'create_date': '2017-04-04 10:31:24.773675-05', 'canned_comment_id': 8, 'comment_text': 'this is test text for comment 2', 'comment_name': 'test canned 2 (calendar only)'}, {'company_id': 19391, 'is_active': 1, 'create_user_id': 60142, 'create_date': '2017-04-04 10:32:11.889664-05', 'canned_comment_id': 9, 'comment_text': 'this is test text for comment 3', 'comment_name': 'test canned 3 (text and calendar)'}, {'company_id': 19391, 'is_active': 1, 'create_user_id': 60142, 'create_date': '2017-04-18 08:06:47.966447-05', 'canned_comment_id': 11, 'comment_text': 'this is test text for comment 4', 'comment_name': 'test canned 4 (no responses)'}], 'total': 4, 'meta': {'sort': 'canned_comment_id', 'limit': 25, 'total': 4, 'start': 0, 'dir': 'asc'}}
+2024-04-05 16:48:55,807 - INFO - Successful call to UpdateLXOrder.updateLXOrder  endpoint
+2024-04-05 16:48:55,809 - INFO - Request Call :<Request 'http://127.0.0.1:5000/api/updateLX' [GET]>
+2024-04-05 16:48:55,810 - INFO - response status: <Response 359 bytes [200 OK]>
+2024-04-05 16:49:00,869 - ERROR - Exception on /api/update [GET]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 50, in perform_lender_x_json_call
+    response.raise_for_status()
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://app.sandbox1.lenderx-labs.com/appraisal/order/255943
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 67, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\updateorder.py", line 59, in updateOrder
+    resp = update_order(cred,order_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\updateorder.py", line 42, in update_order
+    response = perform_lender_x_json_call(url, "PUT", credentials.APIKey, credentials.LXUser, message, message_dt, request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 60, in perform_lender_x_json_call
+    raise Exception(response_text)
+Exception: 
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>LenderX</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="Industry-leading appraisal management software for mortgage professionals nationwide.">
+        <script type="text/javascript">
+            window.hsConversationsSettings = {
+                loadImmediately: false,
+                inlineEmbedSelector: '#chatbtn',
+                enableWidgetCookieBanner: true
+            };
+        </script>
+        <script type="text/javascript" id="hs-script-loader" async defer src="https://js.hs-scripts.com/45474062.js"></script>
+<!--X-->
+<link rel="shortcut icon" href="/static/1711491180/images/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon" />
+
+<!--ExtJS Base Theme-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/xtheme-gray-extend.css" />
+
+<!--Main style and overrides jumbo-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/animation.css" />
+
+<!--Used to build and display html for QC Forms-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/960_24_col.css" />
+
+<!--Appraisal View Calendar Special-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/calendar.css" />
+
+	</head>
+
+	<body class="wrapped">
+
+		<div id="pagewrap">
+
+			
+
+
+	
+
+
+<div class="viewport-header" >
+
+    <a href="/" class="company-logo">
+        
+        
+    </a>
+
+    <div class="contact">
+
+		<div class="icons">
+
+            <img class="logo lenderx" alt="LenderX logo" src="/static/images/logo/LenderX-logo.svg" />
+
+            
+
+                
+
+                <script type='text/javascript'>
+
+                    (function(){
+
+                        var afterAPILoad = function(){
+
+                            var chatButtonId = 'chatbtn',
+
+                                widgetVisible = false,
+
+                                chatButtons = document.querySelectorAll(['#', chatButtonId].join('')),
+
+                                chatButtonDefaultText = 'Chat',
+
+                                createChatBtn = function(){
+                                    var btn = document.createElement('div'),
+                                        btnContent = document.createTextNode(chatButtonDefaultText);
+
+                                    btn.setAttribute('id', chatButtonId);
+                                    btn.setAttribute('class', chatButtonId);
+                                    btn.appendChild(btnContent);
+                                    btn.addEventListener('click', function(){
+                                        if (widgetVisible === true) {
+                                            window.HubSpotConversations.widget.remove();
+                                            widgetVisible = false;
+                                            this.textContent = chatButtonDefaultText;
+                                        } else {
+                                            window.HubSpotConversations.widget.load();
+                                            widgetVisible = true;
+                                            this.textContent = 'Close Chat';
+                                        }
+                                    });
+                                    return btn;
+                                };
+
+                            if (chatButtons.length === 0) {
+                                document.body.append(createChatBtn());
+                            }
+                        };
+
+                        if (window.HubSpotConversations) {
+                            afterAPILoad();
+                        } else {
+                            window.hsConversationsOnReady = [
+                                function(){
+                                    afterAPILoad();
+                                }
+                            ];
+                        }
+
+                    })();
+
+                </script>
+
+                
+
+            
+
+            
+                
+    <a target="_blank" href="/docs/kb/lender/index.html">
+
+<img src="/static/images/training.png" title="Training Resources" /></a>
+
+            
+
+        </div>
+
+        <div class="support-phone">
+            
+            
+            
+            
+            <div class="support-phone-content">
+            
+                <span style="font-weight: bold;">Software&nbsp;Support</span><br/>
+            
+            <b>Phone</b>:&nbsp;1.877.263.0220
+            <br/><b>Hours</b>:&nbsp;Mon - Fri 8:00AM - 6:00PM CT
+            
+                <br/><b>Contact PIN</b>: 62160
+            
+            </div>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+			<div class="contentwrap">
+
+
+
+				
+        <style>
+    .graphic {
+        height: 300px;
+        margin-bottom: 10px;
+    }
+
+    .suggestions ol {
+        list-style-position: inside;
+        list-style-type: decimal;
+    }
+    .suggestions li {
+        font-size: 16px;
+    }
+</style>
+<div style="text-align:center;">
+
+    <h1 style="font-size:40px; font-weight:800">400 - At least one form is required for the appraisal order.</h1>
+    <img src="/static/images/errorcabinet.png" class="graphic" />
+    <div class="suggestions">
+        <h1>Here are some suggestions to get things back on track:</h1>
+        <ol>
+            <li>Double-check the web address for typos.</li>
+            <li>Click <a href="/">here</a> to return to the home page.</li>
+            <li>Contact LenderX Support with any questions by calling 877.263.0220 or emailing <a href="mailto:support@lenderx.com">support@lenderx.com</a>.</li>
+        </ol>
+    </div>
+</div>
+
+    
+
+			</div>
+		</div>
+
+		<div class="template footer">Copyright&copy; 2021. LenderX, LLC. All rights reserved. | <a class="privacyPolicy" href="https://lenderx.com/privacy-policy/" target="_blank">Privacy Policy</a></div>
+		
+
+	</body>
+</html>
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 71, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-05 16:49:25,355 - INFO - Successful call to getCannedComment.get_canned_comment  endpoint
+2024-04-05 16:49:25,356 - INFO - Request Call :<Request 'http://127.0.0.1:5000/api/cannedcomment?lx_user=shubham@vidyatech.com&APIKey=E5DEsSvAAgKowf52BjJqAg&APISecret=mupojP8O3yCkQX3mWv2nlA&BaseURL=https://app.sandbox1.lenderx-labs.com&appfile_id=250581' [GET]>
+2024-04-05 16:49:25,358 - INFO - response status: {'success': 1, 'data': [{'company_id': 19391, 'is_active': 1, 'create_user_id': 60142, 'create_date': '2017-04-04 10:30:51.069696-05', 'canned_comment_id': 7, 'comment_text': 'this is test text for comment 1', 'comment_name': 'test canned 1 (text only)'}, {'company_id': 19391, 'is_active': 1, 'create_user_id': 60142, 'create_date': '2017-04-04 10:31:24.773675-05', 'canned_comment_id': 8, 'comment_text': 'this is test text for comment 2', 'comment_name': 'test canned 2 (calendar only)'}, {'company_id': 19391, 'is_active': 1, 'create_user_id': 60142, 'create_date': '2017-04-04 10:32:11.889664-05', 'canned_comment_id': 9, 'comment_text': 'this is test text for comment 3', 'comment_name': 'test canned 3 (text and calendar)'}, {'company_id': 19391, 'is_active': 1, 'create_user_id': 60142, 'create_date': '2017-04-18 08:06:47.966447-05', 'canned_comment_id': 11, 'comment_text': 'this is test text for comment 4', 'comment_name': 'test canned 4 (no responses)'}], 'total': 4, 'meta': {'sort': 'canned_comment_id', 'limit': 25, 'total': 4, 'start': 0, 'dir': 'asc'}}
+2024-04-05 16:49:34,029 - ERROR - Exception on /api/update [GET]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 50, in perform_lender_x_json_call
+    response.raise_for_status()
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://app.sandbox1.lenderx-labs.com/appraisal/order/255943
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 67, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\updateorder.py", line 59, in updateOrder
+    resp = update_order(cred,order_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\updateorder.py", line 42, in update_order
+    response = perform_lender_x_json_call(url, "PUT", credentials.APIKey, credentials.LXUser, message, message_dt, request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 60, in perform_lender_x_json_call
+    raise Exception(response_text)
+Exception: 
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>LenderX</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="Industry-leading appraisal management software for mortgage professionals nationwide.">
+        <script type="text/javascript">
+            window.hsConversationsSettings = {
+                loadImmediately: false,
+                inlineEmbedSelector: '#chatbtn',
+                enableWidgetCookieBanner: true
+            };
+        </script>
+        <script type="text/javascript" id="hs-script-loader" async defer src="https://js.hs-scripts.com/45474062.js"></script>
+<!--X-->
+<link rel="shortcut icon" href="/static/1711491180/images/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon" />
+
+<!--ExtJS Base Theme-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/xtheme-gray-extend.css" />
+
+<!--Main style and overrides jumbo-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/animation.css" />
+
+<!--Used to build and display html for QC Forms-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/960_24_col.css" />
+
+<!--Appraisal View Calendar Special-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/calendar.css" />
+
+	</head>
+
+	<body class="wrapped">
+
+		<div id="pagewrap">
+
+			
+
+
+	
+
+
+<div class="viewport-header" >
+
+    <a href="/" class="company-logo">
+        
+        
+    </a>
+
+    <div class="contact">
+
+		<div class="icons">
+
+            <img class="logo lenderx" alt="LenderX logo" src="/static/images/logo/LenderX-logo.svg" />
+
+            
+
+                
+
+                <script type='text/javascript'>
+
+                    (function(){
+
+                        var afterAPILoad = function(){
+
+                            var chatButtonId = 'chatbtn',
+
+                                widgetVisible = false,
+
+                                chatButtons = document.querySelectorAll(['#', chatButtonId].join('')),
+
+                                chatButtonDefaultText = 'Chat',
+
+                                createChatBtn = function(){
+                                    var btn = document.createElement('div'),
+                                        btnContent = document.createTextNode(chatButtonDefaultText);
+
+                                    btn.setAttribute('id', chatButtonId);
+                                    btn.setAttribute('class', chatButtonId);
+                                    btn.appendChild(btnContent);
+                                    btn.addEventListener('click', function(){
+                                        if (widgetVisible === true) {
+                                            window.HubSpotConversations.widget.remove();
+                                            widgetVisible = false;
+                                            this.textContent = chatButtonDefaultText;
+                                        } else {
+                                            window.HubSpotConversations.widget.load();
+                                            widgetVisible = true;
+                                            this.textContent = 'Close Chat';
+                                        }
+                                    });
+                                    return btn;
+                                };
+
+                            if (chatButtons.length === 0) {
+                                document.body.append(createChatBtn());
+                            }
+                        };
+
+                        if (window.HubSpotConversations) {
+                            afterAPILoad();
+                        } else {
+                            window.hsConversationsOnReady = [
+                                function(){
+                                    afterAPILoad();
+                                }
+                            ];
+                        }
+
+                    })();
+
+                </script>
+
+                
+
+            
+
+            
+                
+    <a target="_blank" href="/docs/kb/lender/index.html">
+
+<img src="/static/images/training.png" title="Training Resources" /></a>
+
+            
+
+        </div>
+
+        <div class="support-phone">
+            
+            
+            
+            
+            <div class="support-phone-content">
+            
+                <span style="font-weight: bold;">Software&nbsp;Support</span><br/>
+            
+            <b>Phone</b>:&nbsp;1.877.263.0220
+            <br/><b>Hours</b>:&nbsp;Mon - Fri 8:00AM - 6:00PM CT
+            
+                <br/><b>Contact PIN</b>: 62160
+            
+            </div>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+			<div class="contentwrap">
+
+
+
+				
+        <style>
+    .graphic {
+        height: 300px;
+        margin-bottom: 10px;
+    }
+
+    .suggestions ol {
+        list-style-position: inside;
+        list-style-type: decimal;
+    }
+    .suggestions li {
+        font-size: 16px;
+    }
+</style>
+<div style="text-align:center;">
+
+    <h1 style="font-size:40px; font-weight:800">400 - At least one form is required for the appraisal order.</h1>
+    <img src="/static/images/errorcabinet.png" class="graphic" />
+    <div class="suggestions">
+        <h1>Here are some suggestions to get things back on track:</h1>
+        <ol>
+            <li>Double-check the web address for typos.</li>
+            <li>Click <a href="/">here</a> to return to the home page.</li>
+            <li>Contact LenderX Support with any questions by calling 877.263.0220 or emailing <a href="mailto:support@lenderx.com">support@lenderx.com</a>.</li>
+        </ol>
+    </div>
+</div>
+
+    
+
+			</div>
+		</div>
+
+		<div class="template footer">Copyright&copy; 2021. LenderX, LLC. All rights reserved. | <a class="privacyPolicy" href="https://lenderx.com/privacy-policy/" target="_blank">Privacy Policy</a></div>
+		
+
+	</body>
+</html>
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 71, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-05 17:07:17,571 - ERROR - Exception on /api/comment [GET]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 50, in perform_lender_x_json_call
+    response.raise_for_status()
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://app.sandbox1.lenderx-labs.com/communication
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 67, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\PostComment.py", line 50, in canned_comment
+    result = post_comment(cred)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\PostComment.py", line 36, in post_comment
+    return execute_lx_api_call(credentials, body, "/communication", "", "POST")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 20, in execute_lx_api_call
+    return perform_lender_x_json_call(f"{credentials.BaseURL}{resource}?{parameters}", action, credentials.APIKey, credentials.LXUser, message, message_dt, request, content_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 60, in perform_lender_x_json_call
+    raise Exception(response_text)
+Exception: 
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>LenderX</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="Industry-leading appraisal management software for mortgage professionals nationwide.">
+        <script type="text/javascript">
+            window.hsConversationsSettings = {
+                loadImmediately: false,
+                inlineEmbedSelector: '#chatbtn',
+                enableWidgetCookieBanner: true
+            };
+        </script>
+        <script type="text/javascript" id="hs-script-loader" async defer src="https://js.hs-scripts.com/45474062.js"></script>
+<!--X-->
+<link rel="shortcut icon" href="/static/1711491180/images/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon" />
+
+<!--ExtJS Base Theme-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/xtheme-gray-extend.css" />
+
+<!--Main style and overrides jumbo-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/animation.css" />
+
+<!--Used to build and display html for QC Forms-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/960_24_col.css" />
+
+<!--Appraisal View Calendar Special-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/calendar.css" />
+
+	</head>
+
+	<body class="wrapped">
+
+		<div id="pagewrap">
+
+			
+
+
+	
+
+
+<div class="viewport-header" >
+
+    <a href="/" class="company-logo">
+        
+        
+    </a>
+
+    <div class="contact">
+
+		<div class="icons">
+
+            <img class="logo lenderx" alt="LenderX logo" src="/static/images/logo/LenderX-logo.svg" />
+
+            
+
+                
+
+                <script type='text/javascript'>
+
+                    (function(){
+
+                        var afterAPILoad = function(){
+
+                            var chatButtonId = 'chatbtn',
+
+                                widgetVisible = false,
+
+                                chatButtons = document.querySelectorAll(['#', chatButtonId].join('')),
+
+                                chatButtonDefaultText = 'Chat',
+
+                                createChatBtn = function(){
+                                    var btn = document.createElement('div'),
+                                        btnContent = document.createTextNode(chatButtonDefaultText);
+
+                                    btn.setAttribute('id', chatButtonId);
+                                    btn.setAttribute('class', chatButtonId);
+                                    btn.appendChild(btnContent);
+                                    btn.addEventListener('click', function(){
+                                        if (widgetVisible === true) {
+                                            window.HubSpotConversations.widget.remove();
+                                            widgetVisible = false;
+                                            this.textContent = chatButtonDefaultText;
+                                        } else {
+                                            window.HubSpotConversations.widget.load();
+                                            widgetVisible = true;
+                                            this.textContent = 'Close Chat';
+                                        }
+                                    });
+                                    return btn;
+                                };
+
+                            if (chatButtons.length === 0) {
+                                document.body.append(createChatBtn());
+                            }
+                        };
+
+                        if (window.HubSpotConversations) {
+                            afterAPILoad();
+                        } else {
+                            window.hsConversationsOnReady = [
+                                function(){
+                                    afterAPILoad();
+                                }
+                            ];
+                        }
+
+                    })();
+
+                </script>
+
+                
+
+            
+
+            
+                
+    <a target="_blank" href="/docs/kb/lender/index.html">
+
+<img src="/static/images/training.png" title="Training Resources" /></a>
+
+            
+
+        </div>
+
+        <div class="support-phone">
+            
+            
+            
+            
+            <div class="support-phone-content">
+            
+                <span style="font-weight: bold;">Software&nbsp;Support</span><br/>
+            
+            <b>Phone</b>:&nbsp;1.877.263.0220
+            <br/><b>Hours</b>:&nbsp;Mon - Fri 8:00AM - 6:00PM CT
+            
+                <br/><b>Contact PIN</b>: 62160
+            
+            </div>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+			<div class="contentwrap">
+
+
+
+				
+        <style>
+    .graphic {
+        height: 300px;
+        margin-bottom: 10px;
+    }
+
+    .suggestions ol {
+        list-style-position: inside;
+        list-style-type: decimal;
+    }
+    .suggestions li {
+        font-size: 16px;
+    }
+</style>
+<div style="text-align:center;">
+
+    <h1 style="font-size:40px; font-weight:800">400 - Caught exception in Blackjack::Controller::Communication->base "Can't use an undefined value as a HASH reference at /apps/sl-blackjack/lib/Blackjack/Controller/Communication.pm line 76, <$fh> line 1."</h1>
+    <img src="/static/images/errorcabinet.png" class="graphic" />
+    <div class="suggestions">
+        <h1>Here are some suggestions to get things back on track:</h1>
+        <ol>
+            <li>Double-check the web address for typos.</li>
+            <li>Click <a href="/">here</a> to return to the home page.</li>
+            <li>Contact LenderX Support with any questions by calling 877.263.0220 or emailing <a href="mailto:support@lenderx.com">support@lenderx.com</a>.</li>
+        </ol>
+    </div>
+</div>
+
+    
+
+			</div>
+		</div>
+
+		<div class="template footer">Copyright&copy; 2021. LenderX, LLC. All rights reserved. | <a class="privacyPolicy" href="https://lenderx.com/privacy-policy/" target="_blank">Privacy Policy</a></div>
+		
+
+	</body>
+</html>
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 71, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-05 17:09:38,991 - ERROR - Exception on /api/comment [GET]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 50, in perform_lender_x_json_call
+    response.raise_for_status()
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://app.sandbox1.lenderx-labs.com/communication
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 67, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\PostComment.py", line 50, in canned_comment
+    result = post_comment(cred)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\PostComment.py", line 36, in post_comment
+    return execute_lx_api_call(credentials, body, "/communication", "", "POST")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 20, in execute_lx_api_call
+    return perform_lender_x_json_call(f"{credentials.BaseURL}{resource}?{parameters}", action, credentials.APIKey, credentials.LXUser, message, message_dt, request, content_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 60, in perform_lender_x_json_call
+    raise Exception(response_text)
+Exception: 
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>LenderX</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="Industry-leading appraisal management software for mortgage professionals nationwide.">
+        <script type="text/javascript">
+            window.hsConversationsSettings = {
+                loadImmediately: false,
+                inlineEmbedSelector: '#chatbtn',
+                enableWidgetCookieBanner: true
+            };
+        </script>
+        <script type="text/javascript" id="hs-script-loader" async defer src="https://js.hs-scripts.com/45474062.js"></script>
+<!--X-->
+<link rel="shortcut icon" href="/static/1711491180/images/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon" />
+
+<!--ExtJS Base Theme-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/xtheme-gray-extend.css" />
+
+<!--Main style and overrides jumbo-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/animation.css" />
+
+<!--Used to build and display html for QC Forms-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/960_24_col.css" />
+
+<!--Appraisal View Calendar Special-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/calendar.css" />
+
+	</head>
+
+	<body class="wrapped">
+
+		<div id="pagewrap">
+
+			
+
+
+	
+
+
+<div class="viewport-header" >
+
+    <a href="/" class="company-logo">
+        
+        
+    </a>
+
+    <div class="contact">
+
+		<div class="icons">
+
+            <img class="logo lenderx" alt="LenderX logo" src="/static/images/logo/LenderX-logo.svg" />
+
+            
+
+                
+
+                <script type='text/javascript'>
+
+                    (function(){
+
+                        var afterAPILoad = function(){
+
+                            var chatButtonId = 'chatbtn',
+
+                                widgetVisible = false,
+
+                                chatButtons = document.querySelectorAll(['#', chatButtonId].join('')),
+
+                                chatButtonDefaultText = 'Chat',
+
+                                createChatBtn = function(){
+                                    var btn = document.createElement('div'),
+                                        btnContent = document.createTextNode(chatButtonDefaultText);
+
+                                    btn.setAttribute('id', chatButtonId);
+                                    btn.setAttribute('class', chatButtonId);
+                                    btn.appendChild(btnContent);
+                                    btn.addEventListener('click', function(){
+                                        if (widgetVisible === true) {
+                                            window.HubSpotConversations.widget.remove();
+                                            widgetVisible = false;
+                                            this.textContent = chatButtonDefaultText;
+                                        } else {
+                                            window.HubSpotConversations.widget.load();
+                                            widgetVisible = true;
+                                            this.textContent = 'Close Chat';
+                                        }
+                                    });
+                                    return btn;
+                                };
+
+                            if (chatButtons.length === 0) {
+                                document.body.append(createChatBtn());
+                            }
+                        };
+
+                        if (window.HubSpotConversations) {
+                            afterAPILoad();
+                        } else {
+                            window.hsConversationsOnReady = [
+                                function(){
+                                    afterAPILoad();
+                                }
+                            ];
+                        }
+
+                    })();
+
+                </script>
+
+                
+
+            
+
+            
+                
+    <a target="_blank" href="/docs/kb/lender/index.html">
+
+<img src="/static/images/training.png" title="Training Resources" /></a>
+
+            
+
+        </div>
+
+        <div class="support-phone">
+            
+            
+            
+            
+            <div class="support-phone-content">
+            
+                <span style="font-weight: bold;">Software&nbsp;Support</span><br/>
+            
+            <b>Phone</b>:&nbsp;1.877.263.0220
+            <br/><b>Hours</b>:&nbsp;Mon - Fri 8:00AM - 6:00PM CT
+            
+                <br/><b>Contact PIN</b>: 62160
+            
+            </div>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+			<div class="contentwrap">
+
+
+
+				
+        <style>
+    .graphic {
+        height: 300px;
+        margin-bottom: 10px;
+    }
+
+    .suggestions ol {
+        list-style-position: inside;
+        list-style-type: decimal;
+    }
+    .suggestions li {
+        font-size: 16px;
+    }
+</style>
+<div style="text-align:center;">
+
+    <h1 style="font-size:40px; font-weight:800">400 - Caught exception in Blackjack::Controller::Communication->base "Can't use an undefined value as a HASH reference at /apps/sl-blackjack/lib/Blackjack/Controller/Communication.pm line 76, <$fh> line 1."</h1>
+    <img src="/static/images/errorcabinet.png" class="graphic" />
+    <div class="suggestions">
+        <h1>Here are some suggestions to get things back on track:</h1>
+        <ol>
+            <li>Double-check the web address for typos.</li>
+            <li>Click <a href="/">here</a> to return to the home page.</li>
+            <li>Contact LenderX Support with any questions by calling 877.263.0220 or emailing <a href="mailto:support@lenderx.com">support@lenderx.com</a>.</li>
+        </ol>
+    </div>
+</div>
+
+    
+
+			</div>
+		</div>
+
+		<div class="template footer">Copyright&copy; 2021. LenderX, LLC. All rights reserved. | <a class="privacyPolicy" href="https://lenderx.com/privacy-policy/" target="_blank">Privacy Policy</a></div>
+		
+
+	</body>
+</html>
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 71, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-08 09:38:27,705 - ERROR - Exception on /api/comment [GET]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 50, in perform_lender_x_json_call
+    response.raise_for_status()
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://app.sandbox1.lenderx-labs.com/communication
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 67, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\PostComment.py", line 50, in canned_comment
+    result = post_comment(cred)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\PostComment.py", line 36, in post_comment
+    return execute_lx_api_call(credentials, body, "/communication", "", "POST")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 20, in execute_lx_api_call
+    return perform_lender_x_json_call(f"{credentials.BaseURL}{resource}?{parameters}", action, credentials.APIKey, credentials.LXUser, message, message_dt, request, content_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 60, in perform_lender_x_json_call
+    raise Exception(response_text)
+Exception: 
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>LenderX</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="Industry-leading appraisal management software for mortgage professionals nationwide.">
+        <script type="text/javascript">
+            window.hsConversationsSettings = {
+                loadImmediately: false,
+                inlineEmbedSelector: '#chatbtn',
+                enableWidgetCookieBanner: true
+            };
+        </script>
+        <script type="text/javascript" id="hs-script-loader" async defer src="https://js.hs-scripts.com/45474062.js"></script>
+<!--X-->
+<link rel="shortcut icon" href="/static/1711491180/images/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon" />
+
+<!--ExtJS Base Theme-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/xtheme-gray-extend.css" />
+
+<!--Main style and overrides jumbo-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/animation.css" />
+
+<!--Used to build and display html for QC Forms-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/960_24_col.css" />
+
+<!--Appraisal View Calendar Special-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/calendar.css" />
+
+	</head>
+
+	<body class="wrapped">
+
+		<div id="pagewrap">
+
+			
+
+
+	
+
+
+<div class="viewport-header" >
+
+    <a href="/" class="company-logo">
+        
+        
+    </a>
+
+    <div class="contact">
+
+		<div class="icons">
+
+            <img class="logo lenderx" alt="LenderX logo" src="/static/images/logo/LenderX-logo.svg" />
+
+            
+
+                
+
+                <script type='text/javascript'>
+
+                    (function(){
+
+                        var afterAPILoad = function(){
+
+                            var chatButtonId = 'chatbtn',
+
+                                widgetVisible = false,
+
+                                chatButtons = document.querySelectorAll(['#', chatButtonId].join('')),
+
+                                chatButtonDefaultText = 'Chat',
+
+                                createChatBtn = function(){
+                                    var btn = document.createElement('div'),
+                                        btnContent = document.createTextNode(chatButtonDefaultText);
+
+                                    btn.setAttribute('id', chatButtonId);
+                                    btn.setAttribute('class', chatButtonId);
+                                    btn.appendChild(btnContent);
+                                    btn.addEventListener('click', function(){
+                                        if (widgetVisible === true) {
+                                            window.HubSpotConversations.widget.remove();
+                                            widgetVisible = false;
+                                            this.textContent = chatButtonDefaultText;
+                                        } else {
+                                            window.HubSpotConversations.widget.load();
+                                            widgetVisible = true;
+                                            this.textContent = 'Close Chat';
+                                        }
+                                    });
+                                    return btn;
+                                };
+
+                            if (chatButtons.length === 0) {
+                                document.body.append(createChatBtn());
+                            }
+                        };
+
+                        if (window.HubSpotConversations) {
+                            afterAPILoad();
+                        } else {
+                            window.hsConversationsOnReady = [
+                                function(){
+                                    afterAPILoad();
+                                }
+                            ];
+                        }
+
+                    })();
+
+                </script>
+
+                
+
+            
+
+            
+                
+    <a target="_blank" href="/docs/kb/lender/index.html">
+
+<img src="/static/images/training.png" title="Training Resources" /></a>
+
+            
+
+        </div>
+
+        <div class="support-phone">
+            
+            
+            
+            
+            <div class="support-phone-content">
+            
+                <span style="font-weight: bold;">Software&nbsp;Support</span><br/>
+            
+            <b>Phone</b>:&nbsp;1.877.263.0220
+            <br/><b>Hours</b>:&nbsp;Mon - Fri 8:00AM - 6:00PM CT
+            
+                <br/><b>Contact PIN</b>: 62160
+            
+            </div>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+			<div class="contentwrap">
+
+
+
+				
+        <style>
+    .graphic {
+        height: 300px;
+        margin-bottom: 10px;
+    }
+
+    .suggestions ol {
+        list-style-position: inside;
+        list-style-type: decimal;
+    }
+    .suggestions li {
+        font-size: 16px;
+    }
+</style>
+<div style="text-align:center;">
+
+    <h1 style="font-size:40px; font-weight:800">400 - Caught exception in Blackjack::Controller::Communication->base "Can't use an undefined value as a HASH reference at /apps/sl-blackjack/lib/Blackjack/Controller/Communication.pm line 76, <$fh> line 1."</h1>
+    <img src="/static/images/errorcabinet.png" class="graphic" />
+    <div class="suggestions">
+        <h1>Here are some suggestions to get things back on track:</h1>
+        <ol>
+            <li>Double-check the web address for typos.</li>
+            <li>Click <a href="/">here</a> to return to the home page.</li>
+            <li>Contact LenderX Support with any questions by calling 877.263.0220 or emailing <a href="mailto:support@lenderx.com">support@lenderx.com</a>.</li>
+        </ol>
+    </div>
+</div>
+
+    
+
+			</div>
+		</div>
+
+		<div class="template footer">Copyright&copy; 2021. LenderX, LLC. All rights reserved. | <a class="privacyPolicy" href="https://lenderx.com/privacy-policy/" target="_blank">Privacy Policy</a></div>
+		
+
+	</body>
+</html>
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 71, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-08 09:39:28,446 - ERROR - Exception on /api/comment [GET]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 67, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\PostComment.py", line 52, in canned_comment
+    result = post_comment(cred)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\PostComment.py", line 18, in post_comment
+    body=json.dumps({
+                    ^
+TypeError: unhashable type: 'dict'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 71, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-08 09:39:30,004 - ERROR - Exception on /api/comment [GET]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 67, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\PostComment.py", line 52, in canned_comment
+    result = post_comment(cred)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\PostComment.py", line 18, in post_comment
+    body=json.dumps({
+                    ^
+TypeError: unhashable type: 'dict'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 71, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-08 09:39:52,659 - INFO - Successful call to PostComment.canned_comment  endpoint
+2024-04-08 09:39:52,660 - INFO - Request Call :<Request 'http://127.0.0.1:5000/api/comment?lx_user=shubham@vidyatech.com&APIKey=E5DEsSvAAgKowf52BjJqAg&APISecret=mupojP8O3yCkQX3mWv2nlA&BaseURL=https://app.sandbox1.lenderx-labs.com&appfile_id=250581' [GET]>
+2024-04-08 09:39:52,660 - INFO - response status: {'success': 0, 'exception': {'msg': 'Canned Comment [12] could not be found', 'type': 'general'}, 'error': 'Canned Comment [12] could not be found'}
+2024-04-08 09:40:08,437 - INFO - Successful call to PostComment.canned_comment  endpoint
+2024-04-08 09:40:08,438 - INFO - Request Call :<Request 'http://127.0.0.1:5000/api/comment?lx_user=shubham@vidyatech.com&APIKey=E5DEsSvAAgKowf52BjJqAg&APISecret=mupojP8O3yCkQX3mWv2nlA&BaseURL=https://app.sandbox1.lenderx-labs.com&appfile_id=250581' [GET]>
+2024-04-08 09:40:08,439 - INFO - response status: {'success': 0, 'exception': {'msg': 'Canned Comment [4] could not be found', 'type': 'general'}, 'error': 'Canned Comment [4] could not be found'}
+2024-04-08 09:40:19,442 - INFO - Successful call to PostComment.canned_comment  endpoint
+2024-04-08 09:40:19,443 - INFO - Request Call :<Request 'http://127.0.0.1:5000/api/comment?lx_user=shubham@vidyatech.com&APIKey=E5DEsSvAAgKowf52BjJqAg&APISecret=mupojP8O3yCkQX3mWv2nlA&BaseURL=https://app.sandbox1.lenderx-labs.com&appfile_id=250581' [GET]>
+2024-04-08 09:40:19,444 - INFO - response status: {'data': {'conversation_id': '7c9c9601-940d-46bb-a002-816fdf5cdee5', 'subject': None, 'appraisal_order_id': 255952, 'appraisal_request_id': None, 'appraisal_request_uuid': None, 'task_id': 'eaacbc40-f55d-11ee-9088-ed99ca5a73b4', 'body': 'Test Comment', 'id': 953529, 'current_request_uuid': None, 'current_request_id': None}}
+2024-04-08 09:45:38,536 - ERROR - Exception on /api/appfile [GET]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 50, in perform_lender_x_json_call
+    response.raise_for_status()
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://app.sandbox1.lenderx-labs.com/appraisal/appfile?loan_number=2311000478
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 68, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\GetAppFile.py", line 36, in api_get_orders
+    resp = get_orders(cred)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\GetAppFile.py", line 22, in get_orders
+    return execute_lx_api_call(credentials, None, "/appraisal/appfile", "loan_number=2311000478", "GET","text/x-json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 20, in execute_lx_api_call
+    return perform_lender_x_json_call(f"{credentials.BaseURL}{resource}?{parameters}", action, credentials.APIKey, credentials.LXUser, message, message_dt, request, content_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\LenderXComm.py", line 60, in perform_lender_x_json_call
+    raise Exception(response_text)
+Exception: 
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>LenderX</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="Industry-leading appraisal management software for mortgage professionals nationwide.">
+        <script type="text/javascript">
+            window.hsConversationsSettings = {
+                loadImmediately: false,
+                inlineEmbedSelector: '#chatbtn',
+                enableWidgetCookieBanner: true
+            };
+        </script>
+        <script type="text/javascript" id="hs-script-loader" async defer src="https://js.hs-scripts.com/45474062.js"></script>
+<!--X-->
+<link rel="shortcut icon" href="/static/1711491180/images/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon" />
+
+<!--ExtJS Base Theme-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/js/ext/resources/css/xtheme-gray-extend.css" />
+
+<!--Main style and overrides jumbo-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/animation.css" />
+
+<!--Used to build and display html for QC Forms-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/960_24_col.css" />
+
+<!--Appraisal View Calendar Special-->
+<link rel="stylesheet" type="text/css" href="/static/1711491180/css/calendar.css" />
+
+	</head>
+
+	<body class="wrapped">
+
+		<div id="pagewrap">
+
+			
+
+
+	
+
+
+<div class="viewport-header" >
+
+    <a href="/" class="company-logo">
+        
+        
+    </a>
+
+    <div class="contact">
+
+		<div class="icons">
+
+            <img class="logo lenderx" alt="LenderX logo" src="/static/images/logo/LenderX-logo.svg" />
+
+            
+
+                
+
+                <script type='text/javascript'>
+
+                    (function(){
+
+                        var afterAPILoad = function(){
+
+                            var chatButtonId = 'chatbtn',
+
+                                widgetVisible = false,
+
+                                chatButtons = document.querySelectorAll(['#', chatButtonId].join('')),
+
+                                chatButtonDefaultText = 'Chat',
+
+                                createChatBtn = function(){
+                                    var btn = document.createElement('div'),
+                                        btnContent = document.createTextNode(chatButtonDefaultText);
+
+                                    btn.setAttribute('id', chatButtonId);
+                                    btn.setAttribute('class', chatButtonId);
+                                    btn.appendChild(btnContent);
+                                    btn.addEventListener('click', function(){
+                                        if (widgetVisible === true) {
+                                            window.HubSpotConversations.widget.remove();
+                                            widgetVisible = false;
+                                            this.textContent = chatButtonDefaultText;
+                                        } else {
+                                            window.HubSpotConversations.widget.load();
+                                            widgetVisible = true;
+                                            this.textContent = 'Close Chat';
+                                        }
+                                    });
+                                    return btn;
+                                };
+
+                            if (chatButtons.length === 0) {
+                                document.body.append(createChatBtn());
+                            }
+                        };
+
+                        if (window.HubSpotConversations) {
+                            afterAPILoad();
+                        } else {
+                            window.hsConversationsOnReady = [
+                                function(){
+                                    afterAPILoad();
+                                }
+                            ];
+                        }
+
+                    })();
+
+                </script>
+
+                
+
+            
+
+            
+                
+    <a target="_blank" href="/docs/kb/lender/index.html">
+
+<img src="/static/images/training.png" title="Training Resources" /></a>
+
+            
+
+        </div>
+
+        <div class="support-phone">
+            
+            
+            
+            
+            <div class="support-phone-content">
+            
+                <span style="font-weight: bold;">Software&nbsp;Support</span><br/>
+            
+            <b>Phone</b>:&nbsp;1.877.263.0220
+            <br/><b>Hours</b>:&nbsp;Mon - Fri 8:00AM - 6:00PM CT
+            
+                <br/><b>Contact PIN</b>: 62160
+            
+            </div>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+			<div class="contentwrap">
+
+
+
+				
+        <style>
+    .graphic {
+        height: 300px;
+        margin-bottom: 10px;
+    }
+
+    .suggestions ol {
+        list-style-position: inside;
+        list-style-type: decimal;
+    }
+    .suggestions li {
+        font-size: 16px;
+    }
+</style>
+<div style="text-align:center;">
+
+    <h1 style="font-size:40px; font-weight:800">404 - File Not Found</h1>
+    <img src="/static/images/errorcabinet.png" class="graphic" />
+    <div class="suggestions">
+        <h1>Here are some suggestions to get things back on track:</h1>
+        <ol>
+            <li>Double-check the web address for typos.</li>
+            <li>Click <a href="/">here</a> to return to the home page.</li>
+            <li>Contact LenderX Support with any questions by calling 877.263.0220 or emailing <a href="mailto:support@lenderx.com">support@lenderx.com</a>.</li>
+        </ol>
+    </div>
+</div>
+
+    
+
+			</div>
+		</div>
+
+		<div class="template footer">Copyright&copy; 2021. LenderX, LLC. All rights reserved. | <a class="privacyPolicy" href="https://lenderx.com/privacy-policy/" target="_blank">Privacy Policy</a></div>
+		
+
+	</body>
+</html>
+
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 72, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-08 09:47:05,699 - INFO - Successful call to GetAppFile.api_get_orders  endpoint
+2024-04-08 09:47:05,700 - INFO - Request Call :<Request 'http://127.0.0.1:5000/api/appfile?lx_user=shubham@vidyatech.com&APIKey=E5DEsSvAAgKowf52BjJqAg&APISecret=mupojP8O3yCkQX3mWv2nlA&BaseURL=https://app.sandbox1.lenderx-labs.com' [GET]>
+2024-04-08 09:47:05,702 - INFO - response status: {'success': 1, 'rows': [{'do_not_submit_to_ead': 0, 'revised_date': None, 'ucdp_doc_file_id': None, 'global_file_id': '847eccfc-84a5-11ee-8d81-b38eca5a73b4', 'borrower_email': 'test@test.com', 'lp_key_number': None, 'borrower_first_name': None, 'ucdp_lca_score': None, 'create_api_key_id': 154, 'borrower_enters_payment_info': 0, 'property_type': {'display_order': 1, 'is_default': 0, 'property_type_id': 1, 'description': 'Single Family'}, 'payment_info_received': 1, 'fmae_lender_institution_id': None, 'ead_doc_file_id': None, 'property_type_id': 1, 'fmac_id_number': None, 'ucdp_lca_level': None, 'custom_id_1': '{21f72629-3be0-46fd-abb3-1ed7f5b0c3e5}', 'ucdp_business_unit_number': None, 'purchase_price': '100000.00', 'duplicate_loan_number': 0, 'ucdp_submission_timestamp': None, 'estimated_value': None, 'fha_case_number': None, 'realtor_contact': 'BradDemo 111623', 'borrower_last_name': None, 'borrower_home_phone': '999-999-9999', 'duplicate_property_address': 0, 'create_date': '2023-11-16 11:28:11.9958-06', 'fmac_seller_id': None, 'custom_id_2': 'Encompass', 'borrower_mobile_phone': None, 'application_file_id': 250371, 'realtor_home_phone': '999-999-9999', 'loan_type': {'is_default': 0, 'display_sequence': 1, 'loan_type_value': 'conventional', 'description': 'Conventional'}, 'coborrower_email': None, 'duplicate_borrower_name': 0, 'last_mod_date': '2023-11-16 11:33:13.811206-06', 'coborrower_home_phone': None, 'comments': None, 'realtor_email': 'test@test.com', 'address_id': 585668, 'borrower_middle_name': None, 'processor_id': None, 'fmae_seller_number': None, 'address': {'last_mod_date': '2023-11-16 11:33:13.811206-06', 'tract': None, 'address_id': 585668, 'fragment_unit': None, 'latitude': '34.1031283', 'fragment_pmbprefix': None, 'intersection': None, 'longitude': '-118.3263875', 'timezone': None, 'zip_longitude': '-118.3263875', 'statehouseholdincome': None, 'line2': None, 'pmsa': None, 'zip': '90028', 'countyhouseholdincome': None, 'county_name': 'Los Angeles', 'fragment_suffix': None, 'county': 'Los Angeles', 'fragment_street': 'Vine St', 'geocode_level': 'S', 'city_type': None, 'fragment_predir': None, 'fragment_postdir': None, 'state_FIPS': '06', 'congress_code': None, 'md': None, 'zip_latitude': '34.1031283', 'fragment_house': '1750', 'dma': None, 'city': 'Los Angeles', 'cbsa': None, 'state_abbrev': 'CA', 'fragment_pmbnumber': None, 'areahouseholdincome': None, 'area_code': None, 'daylight_savings': None, 'line1': '1750 vine st', 'msa': None, 'barcode_digits': None, 'county_FIPS': '037', 'block': None, 'city_abbreviation': None, 'last_mod_user_id': 60142}, 'loan_type_value': 'conventional', 'ucdp_cu_score_date': None, 'du_case_number': None, 'is_amc_appraiser': 0, 'loan_officer_id': 60143, 'realtor_phone': None, 'loan_amount': '100000.00', 'file_source_api_key_id': None, 'ucdp_cu_score': None, 'loan_programs': [], 'borrower_name_suffix': None, 'loan_number': '2311000478', 'borrower_name': 'BradDemo111  11.16.23', 'ead_submission_timestamp': None, 'coborrower_work_phone': None, 'create_user_id': 60142, 'parties': [{'home_phone': '999-999-9999', 'interested_party_id': 724048, 'middle_name': None, 'last_name': '11.16.23', 'cell_phone': None, 'email': 'test@test.com', 'interested_party_role': 'borrower', 'work_phone': None, 'first_name': 'BradDemo111'}, {'home_phone': None, 'interested_party_id': 724049, 'middle_name': None, 'last_name': None, 'cell_phone': None, 'email': None, 'interested_party_role': 'coborrower', 'work_phone': None, 'first_name': None}, {'home_phone': '999-999-9999', 'interested_party_id': 724050, 'middle_name': None, 'last_name': '111623', 'cell_phone': None, 'email': 'test@test.com', 'interested_party_role': 'real_estate_agent', 'work_phone': None, 'first_name': 'BradDemo'}], 'company': {'name': 'Encompass', 'branch': 'Main'}, 'coborrower_name': '', 'loan_purpose': {'is_default': 0, 'appraisal_purpose_value': 'Purchase', 'display_sequence': 1, 'description': 'Purchase'}, 'company_id': 19391, 'revision_comments': None, 'fmac_loan_prospector_key_number': None, 'borrower_name_salutation': None, 'realtor_alt_phone': None, 'is_revised': 0, 'fmae_casefile_id': None, 'do_not_submit_to_ucdp': 0, 'coborrower_mobile_phone': None, 'borrower_work_phone': None, 'loan_purpose_value': 'Purchase', 'ignore_payment_status_for_email': None, 'last_mod_user_id': 60142}, {'do_not_submit_to_ead': 1, 'revised_date': None, 'ucdp_doc_file_id': None, 'global_file_id': '2e22e7b6-f279-11ee-b2ff-1dd9ca5a73b4', 'borrower_email': 'test@test.com', 'lp_key_number': None, 'borrower_first_name': None, 'ucdp_lca_score': None, 'create_api_key_id': 1948, 'borrower_enters_payment_info': 0, 'property_type': {'display_order': 1, 'is_default': 0, 'property_type_id': 1, 'description': 'Single Family'}, 'payment_info_received': 0, 'fmae_lender_institution_id': None, 'ead_doc_file_id': None, 'property_type_id': 1, 'fmac_id_number': None, 'ucdp_lca_level': None, 'custom_id_1': None, 'ucdp_business_unit_number': None, 'purchase_price': '100000', 'duplicate_loan_number': 1, 'ucdp_submission_timestamp': None, 'estimated_value': None, 'fha_case_number': None, 'realtor_contact': 'order test', 'borrower_last_name': None, 'borrower_home_phone': '999-999-9999', 'duplicate_property_address': 1, 'create_date': '2024-04-04 06:47:57.324383-05', 'fmac_seller_id': None, 'custom_id_2': None, 'borrower_mobile_phone': '917033471111', 'application_file_id': 250578, 'realtor_home_phone': '917033471111', 'loan_type': {'is_default': 0, 'display_sequence': 1, 'loan_type_value': 'conventional', 'description': 'Conventional'}, 'coborrower_email': 'te@test.com', 'duplicate_borrower_name': 1, 'last_mod_date': '2024-04-04 06:47:57.324383-05', 'coborrower_home_phone': '917033471111', 'comments': None, 'realtor_email': 'te@test.com', 'address_id': 585903, 'borrower_middle_name': None, 'processor_id': None, 'fmae_seller_number': None, 'address': {'last_mod_date': '2024-04-04 06:47:57.324383-05', 'tract': None, 'address_id': 585903, 'fragment_unit': None, 'latitude': '34.1031283', 'fragment_pmbprefix': None, 'intersection': None, 'longitude': '-118.3263875', 'timezone': None, 'zip_longitude': '-118.3263875', 'statehouseholdincome': None, 'line2': None, 'pmsa': None, 'zip': '90028', 'countyhouseholdincome': None, 'county_name': 'Los Angeles', 'fragment_suffix': None, 'county': 'Los Angeles', 'fragment_street': 'Vine St', 'geocode_level': 'S', 'city_type': None, 'fragment_predir': None, 'fragment_postdir': None, 'state_FIPS': '06', 'congress_code': None, 'md': None, 'zip_latitude': '34.1031283', 'fragment_house': '1750', 'dma': None, 'city': 'Los Angeles', 'cbsa': None, 'state_abbrev': 'CA', 'fragment_pmbnumber': None, 'areahouseholdincome': None, 'area_code': None, 'daylight_savings': None, 'line1': '1750 vine st', 'msa': None, 'barcode_digits': None, 'county_FIPS': '037', 'block': None, 'city_abbreviation': None, 'last_mod_user_id': 62160}, 'loan_type_value': 'conventional', 'ucdp_cu_score_date': None, 'du_case_number': None, 'is_amc_appraiser': 0, 'loan_officer_id': 62160, 'realtor_phone': '917033471111', 'loan_amount': '100000', 'file_source_api_key_id': None, 'ucdp_cu_score': None, 'loan_programs': [{'company_id': 19391, 'loan_program_id': 1, 'is_active': 1, 'loan_program_name': 'Conventional Fixed', 'create_date': '2016-05-23 08:12:44.533005-05', 'create_user_id': 60141, 'description': None}], 'borrower_name_suffix': None, 'loan_number': '2311000478', 'borrower_name': 'BradDemo111 11.16.23', 'ead_submission_timestamp': None, 'coborrower_work_phone': '917033471111', 'create_user_id': 62160, 'parties': [{'home_phone': '999-999-9999', 'interested_party_id': 724642, 'middle_name': None, 'last_name': '11.16.23', 'cell_phone': '917033471111', 'email': 'test@test.com', 'interested_party_role': 'borrower', 'work_phone': '917033471111', 'first_name': 'BradDemo111'}, {'home_phone': '917033471111', 'interested_party_id': 724643, 'middle_name': None, 'last_name': 'tesr', 'cell_phone': '917033471111', 'email': 'te@test.com', 'interested_party_role': 'coborrower', 'work_phone': '917033471111', 'first_name': 'order'}, {'home_phone': '917033471111', 'interested_party_id': 724644, 'middle_name': None, 'last_name': 'test', 'cell_phone': '917033471111', 'email': 'te@test.com', 'interested_party_role': 'real_estate_agent', 'work_phone': '917033471111', 'first_name': 'order'}], 'company': {'name': 'Encompass', 'branch': 'Main'}, 'coborrower_name': 'order tesr', 'loan_purpose': {'is_default': 0, 'appraisal_purpose_value': 'Purchase', 'display_sequence': 1, 'description': 'Purchase'}, 'company_id': 19391, 'revision_comments': None, 'fmac_loan_prospector_key_number': None, 'borrower_name_salutation': None, 'realtor_alt_phone': '917033471111', 'is_revised': 0, 'fmae_casefile_id': None, 'do_not_submit_to_ucdp': 1, 'coborrower_mobile_phone': '917033471111', 'borrower_work_phone': '917033471111', 'loan_purpose_value': 'Purchase', 'ignore_payment_status_for_email': None, 'last_mod_user_id': 62160}, {'do_not_submit_to_ead': 0, 'revised_date': None, 'ucdp_doc_file_id': None, 'global_file_id': '847eccfc-84a5-11ee-8d81-b38eca5a73b4', 'borrower_email': 'test@test.com', 'lp_key_number': None, 'borrower_first_name': None, 'ucdp_lca_score': None, 'create_api_key_id': 154, 'borrower_enters_payment_info': 0, 'property_type': {'display_order': 1, 'is_default': 0, 'property_type_id': 1, 'description': 'Single Family'}, 'payment_info_received': 1, 'fmae_lender_institution_id': None, 'ead_doc_file_id': None, 'property_type_id': 1, 'fmac_id_number': None, 'ucdp_lca_level': None, 'custom_id_1': '{21f72629-3be0-46fd-abb3-1ed7f5b0c3e5}', 'ucdp_business_unit_number': None, 'purchase_price': '100000.00', 'duplicate_loan_number': 0, 'ucdp_submission_timestamp': None, 'estimated_value': None, 'fha_case_number': None, 'realtor_contact': 'BradDemo 111623', 'borrower_last_name': None, 'borrower_home_phone': '999-999-9999', 'duplicate_property_address': 1, 'create_date': '2023-11-16 11:29:01.833666-06', 'fmac_seller_id': None, 'custom_id_2': 'Encompass', 'borrower_mobile_phone': None, 'application_file_id': 250372, 'realtor_home_phone': '999-999-9999', 'loan_type': {'is_default': 0, 'display_sequence': 1, 'loan_type_value': 'conventional', 'description': 'Conventional'}, 'coborrower_email': None, 'duplicate_borrower_name': 1, 'last_mod_date': '2023-11-16 11:29:01.833666-06', 'coborrower_home_phone': None, 'comments': None, 'realtor_email': 'test@test.com', 'address_id': 585669, 'borrower_middle_name': None, 'processor_id': None, 'fmae_seller_number': None, 'address': {'last_mod_date': '2023-11-16 11:29:01.833666-06', 'tract': None, 'address_id': 585669, 'fragment_unit': None, 'latitude': '34.1031283', 'fragment_pmbprefix': None, 'intersection': None, 'longitude': '-118.3263875', 'timezone': None, 'zip_longitude': '-118.3263875', 'statehouseholdincome': None, 'line2': None, 'pmsa': None, 'zip': '90028', 'countyhouseholdincome': None, 'county_name': 'Los Angeles', 'fragment_suffix': None, 'county': 'Los Angeles', 'fragment_street': 'Vine St', 'geocode_level': 'S', 'city_type': None, 'fragment_predir': None, 'fragment_postdir': None, 'state_FIPS': '06', 'congress_code': None, 'md': None, 'zip_latitude': '34.1031283', 'fragment_house': '1750', 'dma': None, 'city': 'Los Angeles', 'cbsa': None, 'state_abbrev': 'CA', 'fragment_pmbnumber': None, 'areahouseholdincome': None, 'area_code': None, 'daylight_savings': None, 'line1': '1750 vine st', 'msa': None, 'barcode_digits': None, 'county_FIPS': '037', 'block': None, 'city_abbreviation': None, 'last_mod_user_id': 60142}, 'loan_type_value': 'conventional', 'ucdp_cu_score_date': None, 'du_case_number': None, 'is_amc_appraiser': 0, 'loan_officer_id': 60143, 'realtor_phone': None, 'loan_amount': '100000.00', 'file_source_api_key_id': None, 'ucdp_cu_score': None, 'loan_programs': [{'company_id': 19391, 'loan_program_id': 1, 'is_active': 1, 'loan_program_name': 'Conventional Fixed', 'create_date': '2016-05-23 08:12:44.533005-05', 'create_user_id': 60141, 'description': None}], 'borrower_name_suffix': None, 'loan_number': '2311000478', 'borrower_name': 'BradDemo 111623', 'ead_submission_timestamp': None, 'coborrower_work_phone': None, 'create_user_id': 60142, 'parties': [{'home_phone': '999-999-9999', 'interested_party_id': 724051, 'middle_name': None, 'last_name': '111623', 'cell_phone': None, 'email': 'test@test.com', 'interested_party_role': 'borrower', 'work_phone': None, 'first_name': 'BradDemo'}, {'home_phone': None, 'interested_party_id': 724052, 'middle_name': None, 'last_name': None, 'cell_phone': None, 'email': None, 'interested_party_role': 'coborrower', 'work_phone': None, 'first_name': None}, {'home_phone': '999-999-9999', 'interested_party_id': 724053, 'middle_name': None, 'last_name': '111623', 'cell_phone': None, 'email': 'test@test.com', 'interested_party_role': 'real_estate_agent', 'work_phone': None, 'first_name': 'BradDemo'}], 'company': {'name': 'Encompass', 'branch': 'Main'}, 'coborrower_name': '', 'loan_purpose': {'is_default': 0, 'appraisal_purpose_value': 'Purchase', 'display_sequence': 1, 'description': 'Purchase'}, 'company_id': 19391, 'revision_comments': None, 'fmac_loan_prospector_key_number': None, 'borrower_name_salutation': None, 'realtor_alt_phone': None, 'is_revised': 0, 'fmae_casefile_id': None, 'do_not_submit_to_ucdp': 0, 'coborrower_mobile_phone': None, 'borrower_work_phone': None, 'loan_purpose_value': 'Purchase', 'ignore_payment_status_for_email': None, 'last_mod_user_id': 60142}, {'do_not_submit_to_ead': 1, 'revised_date': None, 'ucdp_doc_file_id': None, 'global_file_id': 'a36b042c-f30a-11ee-b516-5197ca5a73b4', 'borrower_email': 'test@test.com', 'lp_key_number': None, 'borrower_first_name': None, 'ucdp_lca_score': None, 'create_api_key_id': 1948, 'borrower_enters_payment_info': 0, 'property_type': {'display_order': 1, 'is_default': 0, 'property_type_id': 1, 'description': 'Single Family'}, 'payment_info_received': 0, 'fmae_lender_institution_id': None, 'ead_doc_file_id': None, 'property_type_id': 1, 'fmac_id_number': None, 'ucdp_lca_level': None, 'custom_id_1': None, 'ucdp_business_unit_number': None, 'purchase_price': '199999', 'duplicate_loan_number': 1, 'ucdp_submission_timestamp': None, 'estimated_value': '0', 'fha_case_number': None, 'realtor_contact': 'Test111 order11', 'borrower_last_name': None, 'borrower_home_phone': '917033471111', 'duplicate_property_address': 1, 'create_date': '2024-04-05 00:09:10.953394-05', 'fmac_seller_id': None, 'custom_id_2': None, 'borrower_mobile_phone': '917033471111', 'application_file_id': 250581, 'realtor_home_phone': '917033471111', 'loan_type': {'is_default': 0, 'display_sequence': 1, 'loan_type_value': 'conventional', 'description': 'Conventional'}, 'coborrower_email': 't@test.com', 'duplicate_borrower_name': 1, 'last_mod_date': '2024-04-05 00:09:10.953394-05', 'coborrower_home_phone': '917033471111', 'comments': None, 'realtor_email': 't@test.com', 'address_id': 585906, 'borrower_middle_name': None, 'processor_id': None, 'fmae_seller_number': None, 'address': {'last_mod_date': '2024-04-05 00:09:10.953394-05', 'tract': None, 'address_id': 585906, 'fragment_unit': None, 'latitude': '34.0543797', 'fragment_pmbprefix': None, 'intersection': None, 'longitude': '-118.2672801', 'timezone': None, 'zip_longitude': '-118.2672801', 'statehouseholdincome': None, 'line2': None, 'pmsa': None, 'zip': '90017', 'countyhouseholdincome': None, 'county_name': 'Los Angeles', 'fragment_suffix': None, 'county': 'Los Angeles', 'fragment_street': None, 'geocode_level': 'C', 'city_type': None, 'fragment_predir': None, 'fragment_postdir': None, 'state_FIPS': '06', 'congress_code': None, 'md': None, 'zip_latitude': '34.0543797', 'fragment_house': None, 'dma': None, 'city': 'Los Angeles', 'cbsa': None, 'state_abbrev': 'CA', 'fragment_pmbnumber': None, 'areahouseholdincome': None, 'area_code': None, 'daylight_savings': None, 'line1': '1 Test St.', 'msa': None, 'barcode_digits': None, 'county_FIPS': '037', 'block': None, 'city_abbreviation': None, 'last_mod_user_id': 62160}, 'loan_type_value': 'conventional', 'ucdp_cu_score_date': None, 'du_case_number': None, 'is_amc_appraiser': 0, 'loan_officer_id': 62160, 'realtor_phone': '917033471111', 'loan_amount': '150000', 'file_source_api_key_id': None, 'ucdp_cu_score': None, 'loan_programs': [{'company_id': 19391, 'loan_program_id': 1, 'is_active': 1, 'loan_program_name': 'Conventional Fixed', 'create_date': '2016-05-23 08:12:44.533005-05', 'create_user_id': 60141, 'description': None}], 'borrower_name_suffix': None, 'loan_number': '2311000478', 'borrower_name': 'Lender 35 Order', 'ead_submission_timestamp': None, 'coborrower_work_phone': '917033471111', 'create_user_id': 62160, 'parties': [{'home_phone': '917033471111', 'interested_party_id': 724651, 'middle_name': None, 'last_name': 'Order', 'cell_phone': '917033471111', 'email': 'test@test.com', 'interested_party_role': 'borrower', 'work_phone': '917033471111', 'first_name': 'Lender 35'}, {'home_phone': '917033471111', 'interested_party_id': 724652, 'middle_name': None, 'last_name': 'order1', 'cell_phone': '917033471111', 'email': 't@test.com', 'interested_party_role': 'coborrower', 'work_phone': '917033471111', 'first_name': 'Test11'}, {'home_phone': '917033471111', 'interested_party_id': 724653, 'middle_name': None, 'last_name': 'order11', 'cell_phone': '917033471111', 'email': 't@test.com', 'interested_party_role': 'real_estate_agent', 'work_phone': '917033471111', 'first_name': 'Test111'}], 'company': {'name': 'Encompass', 'branch': 'Main'}, 'coborrower_name': 'Test11 order1', 'loan_purpose': {'is_default': 0, 'appraisal_purpose_value': 'Purchase', 'display_sequence': 1, 'description': 'Purchase'}, 'company_id': 19391, 'revision_comments': None, 'fmac_loan_prospector_key_number': None, 'borrower_name_salutation': None, 'realtor_alt_phone': '917033471111', 'is_revised': 0, 'fmae_casefile_id': None, 'do_not_submit_to_ucdp': 1, 'coborrower_mobile_phone': '917033471111', 'borrower_work_phone': '917033471111', 'loan_purpose_value': 'Purchase', 'ignore_payment_status_for_email': None, 'last_mod_user_id': 62160}], 'total': '4'}
+2024-04-08 09:59:07,048 - INFO - Successful call to GetAppFile.api_get_orders  endpoint
+2024-04-08 09:59:07,049 - INFO - Request Call :<Request 'http://127.0.0.1:5000/api/appfile?lx_user=shubham@vidyatech.com&APIKey=E5DEsSvAAgKowf52BjJqAg&APISecret=mupojP8O3yCkQX3mWv2nlA&BaseURL=https://app.sandbox1.lenderx-labs.com&loan_number=2212000450' [GET]>
+2024-04-08 09:59:07,050 - INFO - response status: {'success': 1, 'rows': [{'do_not_submit_to_ead': 0, 'revised_date': None, 'ucdp_doc_file_id': None, 'global_file_id': 'b6d115de-7cae-11ed-90d5-d396ca5a73b4', 'borrower_email': 'shawn.rupnick@lenderx.com', 'lp_key_number': None, 'borrower_first_name': None, 'ucdp_lca_score': None, 'create_api_key_id': 154, 'borrower_enters_payment_info': 0, 'property_type': {'display_order': 1, 'is_default': 0, 'property_type_id': 1, 'description': 'Single Family'}, 'payment_info_received': 1, 'fmae_lender_institution_id': None, 'ead_doc_file_id': None, 'property_type_id': 1, 'fmac_id_number': None, 'ucdp_lca_level': None, 'custom_id_1': '{6f9f6b63-b135-4d30-8c57-63d80c5622c5}', 'ucdp_business_unit_number': None, 'purchase_price': '123576.00', 'duplicate_loan_number': 0, 'ucdp_submission_timestamp': None, 'estimated_value': None, 'fha_case_number': None, 'realtor_contact': 'shawn   1215', 'borrower_last_name': None, 'borrower_home_phone': '414-555-5555', 'duplicate_property_address': 0, 'create_date': '2022-12-15 13:28:54.843831-06', 'fmac_seller_id': None, 'custom_id_2': 'Encompass', 'borrower_mobile_phone': None, 'application_file_id': 250085, 'realtor_home_phone': '414-555-5555', 'loan_type': {'is_default': 0, 'display_sequence': 1, 'loan_type_value': 'conventional', 'description': 'Conventional'}, 'coborrower_email': None, 'duplicate_borrower_name': 0, 'last_mod_date': '2024-03-12 12:38:01.245557-05', 'coborrower_home_phone': None, 'comments': None, 'realtor_email': 'shawn.rupnick@lenderx.com', 'address_id': 585315, 'borrower_middle_name': None, 'processor_id': None, 'fmae_seller_number': None, 'address': {'last_mod_date': '2024-03-12 12:38:01.245557-05', 'tract': None, 'address_id': 585315, 'fragment_unit': None, 'latitude': '43.0261722', 'intersection': None, 'fragment_pmbprefix': None, 'longitude': '-88.0073259', 'zip_longitude': '-88.0073259', 'timezone': None, 'statehouseholdincome': None, 'line2': None, 'pmsa': None, 'zip': '53221', 'countyhouseholdincome': None, 'county_name': 'Milwaukee', 'fragment_suffix': None, 'county': 'Milwaukee', 'fragment_street': 'W Main St', 'geocode_level': 'Z', 'city_type': None, 'state_FIPS': '55', 'fragment_postdir': None, 'fragment_predir': None, 'md': None, 'congress_code': None, 'zip_latitude': '43.0261722', 'fragment_house': None, 'dma': None, 'city': 'Milwaukee', 'state_abbrev': 'WI', 'cbsa': None, 'fragment_pmbnumber': None, 'areahouseholdincome': None, 'area_code': None, 'daylight_savings': None, 'line1': '123 main st', 'msa': None, 'barcode_digits': None, 'county_FIPS': '079', 'block': None, 'city_abbreviation': None, 'last_mod_user_id': 60142}, 'loan_type_value': 'conventional', 'ucdp_cu_score_date': None, 'du_case_number': None, 'is_amc_appraiser': 0, 'loan_officer_id': 62058, 'realtor_phone': None, 'loan_amount': '123576.00', 'file_source_api_key_id': None, 'ucdp_cu_score': None, 'loan_programs': [], 'borrower_name_suffix': None, 'loan_number': '2212000450', 'borrower_name': 'shawn  1215', 'ead_submission_timestamp': None, 'coborrower_work_phone': None, 'create_user_id': 62058, 'parties': [{'home_phone': '414-555-5555', 'interested_party_id': 723190, 'middle_name': None, 'last_name': '1215', 'cell_phone': None, 'email': 'shawn.rupnick@lenderx.com', 'interested_party_role': 'borrower', 'work_phone': None, 'first_name': 'shawn'}, {'home_phone': None, 'interested_party_id': 723191, 'middle_name': None, 'last_name': None, 'cell_phone': None, 'email': None, 'interested_party_role': 'coborrower', 'work_phone': None, 'first_name': None}, {'home_phone': '414-555-5555', 'interested_party_id': 723192, 'middle_name': None, 'last_name': '1215', 'cell_phone': None, 'email': 'shawn.rupnick@lenderx.com', 'interested_party_role': 'real_estate_agent', 'work_phone': None, 'first_name': 'shawn'}], 'company': {'name': 'Encompass', 'branch': 'Main'}, 'coborrower_name': '', 'loan_purpose': {'is_default': 0, 'appraisal_purpose_value': 'Purchase', 'display_sequence': 1, 'description': 'Purchase'}, 'company_id': 19391, 'revision_comments': None, 'fmac_loan_prospector_key_number': None, 'borrower_name_salutation': None, 'realtor_alt_phone': None, 'is_revised': 0, 'fmae_casefile_id': None, 'do_not_submit_to_ucdp': 0, 'coborrower_mobile_phone': None, 'borrower_work_phone': None, 'loan_purpose_value': 'Purchase', 'ignore_payment_status_for_email': None, 'last_mod_user_id': 60142}], 'total': '1'}
+2024-04-08 10:38:02,698 - ERROR - Exception on /api/webhook [POST]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 68, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 79, in webhook_call
+    data= order_creation(url)
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 65, in order_creation
+    app_id =api_get_appfile(credentials,loan_number)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\GetAppFile.py", line 33, in api_get_appfile
+    data=resp['total']
+         ~~~~^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 72, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-08 10:39:23,469 - ERROR - Exception on /api/webhook [POST]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 68, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 79, in webhook_call
+    data= order_creation(url)
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 65, in order_creation
+    app_id =api_get_appfile(credentials,loan_number)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\GetAppFile.py", line 35, in api_get_appfile
+    if data>0:
+       ^^^^^^
+TypeError: '>' not supported between instances of 'str' and 'int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 72, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-08 10:41:21,070 - ERROR - Exception on /api/webhook [POST]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 68, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 79, in webhook_call
+    data= order_creation(url)
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 65, in order_creation
+    app_id =api_get_appfile(credentials,loan_number)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\GetAppFile.py", line 37, in api_get_appfile
+    print(resp['application_file_id'])
+          ~~~~^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'application_file_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 72, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-08 10:42:21,530 - ERROR - Exception on /api/webhook [POST]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 68, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 79, in webhook_call
+    data= order_creation(url)
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 65, in order_creation
+    app_id =api_get_appfile(credentials,loan_number)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\GetAppFile.py", line 37, in api_get_appfile
+    print(resp['rows']['application_file_id'])
+          ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 72, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-08 10:43:44,333 - ERROR - Exception on /api/webhook [POST]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 68, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 79, in webhook_call
+    data= order_creation(url)
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 65, in order_creation
+    app_id =api_get_appfile(credentials,loan_number)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\GetAppFile.py", line 37, in api_get_appfile
+    print(resp['rows'].get('application_file_id'))
+          ^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 72, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-08 10:44:51,562 - ERROR - Exception on /api/webhook [POST]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 68, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 79, in webhook_call
+    data= order_creation(url)
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 67, in order_creation
+    result=updateLXOrder(credentials,dataobject, app_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\UpdateLXOrder.py", line 106, in updateLXOrder
+    resp = update_lx_order(cred,orderData,app_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\UpdateLXOrder.py", line 19, in update_lx_order
+    print("order",orderData['city'])
+                  ~~~~~~~~~^^^^^^^^
+TypeError: tuple indices must be integers or slices, not str
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 72, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-08 10:46:31,370 - ERROR - Exception on /api/webhook [POST]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 68, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 79, in webhook_call
+    data= order_creation(url)
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 67, in order_creation
+    result=updateLXOrder(credentials,dataobject,app_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\UpdateLXOrder.py", line 106, in updateLXOrder
+    resp = update_lx_order(cred,orderData,app_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\UpdateLXOrder.py", line 24, in update_lx_order
+    "borrower_first_name": orderData["borrower_firstName"],
+                           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+TypeError: tuple indices must be integers or slices, not str
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 72, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-08 10:48:34,064 - ERROR - Exception on /api/webhook [POST]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 68, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 80, in webhook_call
+    data= order_creation(url)
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 70, in order_creation
+    result= createOrder(credentials,dataobject)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\createLXOrder.py", line 106, in createOrder
+    resp = create_lx_order(cred,orderData)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\createLXOrder.py", line 19, in create_lx_order
+    print("order",orderData['city'])
+                  ~~~~~~~~~^^^^^^^^
+TypeError: tuple indices must be integers or slices, not str
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 72, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-08 10:49:40,372 - ERROR - Exception on /api/webhook [POST]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 68, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 81, in webhook_call
+    data= order_creation(url)
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 66, in order_creation
+    print(dataobject['city'])
+          ~~~~~~~~~~^^^^^^^^
+TypeError: tuple indices must be integers or slices, not str
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 72, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-08 10:50:45,636 - INFO - Successful call to webhook.webhook_call  endpoint
+2024-04-08 10:50:45,637 - INFO - Request Call :<Request 'http://127.0.0.1:5000/api/webhook' [POST]>
+2024-04-08 10:50:45,638 - INFO - response status: {'success': 0, 'exception': {'msg': 'Missing fields: property_type_id\n', 'fields': {'property_type_id': 'missing'}, 'type': 'validation', 'context_data': None}, 'error': 'Missing fields: property_type_id\n'}
+2024-04-08 10:51:24,518 - ERROR - Exception on /api/webhook [POST]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 68, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 81, in webhook_call
+    data= order_creation(url)
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 68, in order_creation
+    result=updateLXOrder(credentials,dataobject,app_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\UpdateLXOrder.py", line 108, in updateLXOrder
+    return json.loads(resp)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 72, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-08 10:53:44,418 - ERROR - Exception on /api/webhook [POST]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 68, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 81, in webhook_call
+    data= order_creation(url)
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 65, in order_creation
+    app_id =api_get_appfile(credentials,loan_number)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\GetAppFile.py", line 37, in api_get_appfile
+    print(resp['rows'][0]['application_file_id'])
+          ~~~~^^^^^^^^
+KeyError: 'rows'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 72, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-08 10:54:30,212 - INFO - Successful call to GetOrders.api_get_orders  endpoint
+2024-04-08 10:54:30,213 - INFO - Request Call :<Request 'http://127.0.0.1:5000/api/get_orders?lx_user=shubham@vidyatech.com&APIKey=E5DEsSvAAgKowf52BjJqAg&APISecret=mupojP8O3yCkQX3mWv2nlA&BaseURL=https://app.sandbox1.lenderx-labs.com' [GET]>
+2024-04-08 10:54:30,215 - INFO - response status: {'success': 1, 'data': [{'qc_workflow_instance_id': None, 'payment_received_date': None, 'nonoverrideable_ead_hard_stop_count': 0, 'revised_date': None, 'is_rushed': 0, 'borrower_email': 'test@test.com', 'appraiser_signed_report_date': None, 'assignment_attempt_standard': '47DF7A74-F568-11EE-AD75-ED99CA5A73B4', 'is_disclosed': 1, 'create_api_key_id': 1948, 'assignment_attempt_company_wide': '47DF7E8E-F568-11EE-AD75-ED99CA5A73B4', 'borrower_date_paid': None, 'special_inspection_note': None, 'is_qx_processing': 0, 'appraisal_copied_to': None, 'borrower_appraisal_fee': None, 'application_file': {'do_not_submit_to_ead': 1, 'revised_date': None, 'global_file_id': 'a36b042c-f30a-11ee-b516-5197ca5a73b4', 'ucdp_doc_file_id': None, 'borrower_email': 'test@test.com', 'borrower_first_name': None, 'lp_key_number': None, 'ucdp_lca_score': None, 'create_api_key_id': 1948, 'borrower_enters_payment_info': 0, 'property_type': {'display_order': 1, 'is_default': 0, 'property_type_id': 1, 'description': 'Single Family'}, 'payment_info_received': 0, 'fmae_lender_institution_id': None, 'property_type_id': 1, 'fmac_id_number': None, 'ucdp_lca_level': None, 'custom_id_1': None, 'ucdp_business_unit_number': None, 'purchase_price': '199999', 'duplicate_loan_number': 1, 'estimated_value': '0', 'fha_case_number': None, 'borrower_last_name': None, 'realtor_contact': 'Test111 order11', 'borrower_home_phone': '917033471111', 'duplicate_property_address': 1, 'create_date': '2024-04-05 00:09:10.953394-05', 'fmac_seller_id': None, 'application_file_id': 250581, 'borrower_mobile_phone': '917033471111', 'custom_id_2': None, 'realtor_home_phone': '917033471111', 'loan_type': {'is_default': 0, 'display_sequence': 1, 'loan_type_value': 'conventional', 'description': 'Conventional'}, 'coborrower_email': 't@test.com', 'duplicate_borrower_name': 1, 'last_mod_date': '2024-04-05 00:09:10.953394-05', 'coborrower_home_phone': '917033471111', 'comments': None, 'realtor_email': 't@test.com', 'address_id': 585906, 'borrower_middle_name': None, 'processor_id': None, 'fmae_seller_number': None, 'address': {'last_mod_date': '2024-04-05 00:09:10.953394-05', 'tract': None, 'address_id': 585906, 'fragment_unit': None, 'latitude': '34.0543797', 'intersection': None, 'fragment_pmbprefix': None, 'location_point': '(-118.26728,34.05438)', 'longitude': '-118.2672801', 'timezone': None, 'zip_longitude': '-118.2672801', 'statehouseholdincome': None, 'line2': None, 'pmsa': None, 'zip': '90017', 'countyhouseholdincome': None, 'county_name': 'Los Angeles', 'county': 'Los Angeles', 'fragment_suffix': None, 'fragment_street': None, 'geocode_level': 'C', 'city_type': None, 'state_FIPS': '06', 'fragment_predir': None, 'fragment_postdir': None, 'congress_code': None, 'md': None, 'zip_latitude': '34.0543797', 'fragment_house': None, 'dma': None, 'city': 'Los Angeles', 'state_abbrev': 'CA', 'cbsa': None, 'fragment_pmbnumber': None, 'areahouseholdincome': None, 'area_code': None, 'daylight_savings': None, 'line1': '1 Test St.', 'msa': None, 'barcode_digits': None, 'county_FIPS': '037', 'block': None, 'city_abbreviation': None, 'last_mod_user_id': 62160}, 'loan_type_value': 'conventional', 'ucdp_cu_score_date': None, 'du_case_number': None, 'loan_officer_id': 62160, 'realtor_phone': '917033471111', 'loan_amount': '150000', 'file_source_api_key_id': None, 'ucdp_cu_score': None, 'borrower_name_suffix': None, 'loan_number': '2311000478', 'borrower_name': 'Lender 35 Order', 'coborrower_work_phone': '917033471111', 'create_user_id': 62160, 'coborrower_name': 'Test11 order1', 'loan_officer_name': 'Shubham Bahuguna', 'company_id': 19391, 'fmac_loan_prospector_key_number': None, 'revision_comments': None, 'borrower_name_salutation': None, 'is_revised': 0, 'realtor_alt_phone': '917033471111', 'fmae_casefile_id': None, 'do_not_submit_to_ucdp': 1, 'borrower_work_phone': '917033471111', 'coborrower_mobile_phone': '917033471111', 'loan_purpose_value': 'Purchase', 'ignore_payment_status_for_email': None, 'last_mod_user_id': 62160}, 'property_type_id': None, 'payment_portal_value': None, 'reassign_attempts_count': None, 'appraisal_status_value': 'assignment_ready', 'order_source_value': 'lenderx_appraisal_order', 'qc_submission_status': None, 'current_qc_submission_id': None, 'disclosure_release_date': '2024-04-05 00:09:10.953394-05', 'fha_case_number': None, 'order_priority_value': 'normal', 'realtor_contact': None, 'current_ucdp_submission_id': None, 'ucdp_workflow_instance_id': None, 'borrower_home_phone': None, 'order_resume_date': None, 'create_date': '2024-04-05 00:09:10.953394-05', 'ucdp_submission_status': None, 'is_qx_in_review': 0, 'appraisal_value': None, 'disclosure_met': 1, 'application_file_id': 250581, 'borrower_mobile_phone': None, 'nonoverrideable_ucdp_hard_stop_count': 0, 'actions_allowed': {}, 'current_ead_submission_id': None, 'coborrower_email': None, 'last_mod_date': '2024-04-05 00:09:10.953394-05', 'appraisal_order_id': 255952, 'coborrower_home_phone': None, 'completion_reminder_sent': None, 'comments': 'Test Order instructions', 'hvcc_compliant': 1, 'realtor_email': None, 'address_id': 585906, 'appraisal_purpose': None, 'payment_cc_auth': None, 'overrideable_ucdp_hard_stop_count': 0, 'auto_assignable': 1, 'is_paid': 1, 'appraiser_id': None, 'is_payment_by_form': 0, 'loan_type_value': None, 'appraisal_completion_date': None, 'needed_by_date': None, 'loan_officer_id': 62160, 'realtor_phone': None, 'payment_cc_last4': None, 'payment_cc_expire': None, 'access_information': None, 'payment_profile_id': None, 'loan_number': None, 'current_workflow_instance_id': 'a42fc33e-f30a-11ee-b516-5197ca5a73b4', 'borrower_name': 'Lender 35 Order', 'coborrower_work_phone': None, 'payment_customer_id': None, 'create_user_id': 62160, 'total_ucdp_hard_stop_count': 0, 'company': {'name': 'Encompass', 'preferences': {'lender_requested_delivery_date': 1, 'display_investor_information': 0}, 'branch': 'Main'}, 'borrower_paid': 0, 'coborrower_name': None, 'company_id': 19391, 'revision_comments': None, 'payment_cc_type': None, 'total_ead_hard_stop_count': 0, 'is_revised': 0, 'realtor_alt_phone': None, 'payment_cc_name': None, 'borrower_work_phone': None, 'coborrower_mobile_phone': None, 'current_request': {'appraisal_company': 'N/A', 'conditions_comment': None, 'days_out': None, 'appraisal_acceptance_negotiation_status_value': None, 'turn_time': None, 'estimated_inspection_date': None, 'accept_date': None, 'actual_inspection_date': None, 'expected_delivery_date': None, 'appraiser': 'N/A', 'appraisal_effective_date': None, 'appraisal_signature_date': None, 'condition_of_appraisal': None, 'request_status': 'N/A', 'schedule_inspection_time': None, 'appraisal_upload_time': None}, 'loan_purpose_value': None, 'payment_whopays': None, 'overrideable_ead_hard_stop_count': 0, 'lender_requested_delivery_date': '2024-04-29', 'last_mod_user_id': 62160, 'current_request_id': None}, {'qc_workflow_instance_id': None, 'payment_received_date': None, 'nonoverrideable_ead_hard_stop_count': 0, 'revised_date': None, 'is_rushed': 0, 'borrower_email': 'test@test.com', 'appraiser_signed_report_date': None, 'assignment_attempt_standard': '47DF7A74-F568-11EE-AD75-ED99CA5A73B4', 'is_disclosed': 1, 'create_api_key_id': 1948, 'assignment_attempt_company_wide': '47DF7E8E-F568-11EE-AD75-ED99CA5A73B4', 'borrower_date_paid': None, 'special_inspection_note': None, 'is_qx_processing': 0, 'appraisal_copied_to': None, 'borrower_appraisal_fee': None, 'application_file': {'do_not_submit_to_ead': 1, 'revised_date': None, 'global_file_id': '2e22e7b6-f279-11ee-b2ff-1dd9ca5a73b4', 'ucdp_doc_file_id': None, 'borrower_email': 'test@test.com', 'borrower_first_name': None, 'lp_key_number': None, 'ucdp_lca_score': None, 'create_api_key_id': 1948, 'borrower_enters_payment_info': 0, 'property_type': {'display_order': 1, 'is_default': 0, 'property_type_id': 1, 'description': 'Single Family'}, 'payment_info_received': 0, 'fmae_lender_institution_id': None, 'property_type_id': 1, 'fmac_id_number': None, 'ucdp_lca_level': None, 'custom_id_1': None, 'ucdp_business_unit_number': None, 'purchase_price': '100000', 'duplicate_loan_number': 1, 'estimated_value': None, 'fha_case_number': None, 'borrower_last_name': None, 'realtor_contact': 'order test', 'borrower_home_phone': '999-999-9999', 'duplicate_property_address': 1, 'create_date': '2024-04-04 06:47:57.324383-05', 'fmac_seller_id': None, 'application_file_id': 250578, 'borrower_mobile_phone': '917033471111', 'custom_id_2': None, 'realtor_home_phone': '917033471111', 'loan_type': {'is_default': 0, 'display_sequence': 1, 'loan_type_value': 'conventional', 'description': 'Conventional'}, 'coborrower_email': 'te@test.com', 'duplicate_borrower_name': 1, 'last_mod_date': '2024-04-04 06:47:57.324383-05', 'coborrower_home_phone': '917033471111', 'comments': None, 'realtor_email': 'te@test.com', 'address_id': 585903, 'borrower_middle_name': None, 'processor_id': None, 'fmae_seller_number': None, 'address': {'last_mod_date': '2024-04-04 06:47:57.324383-05', 'tract': None, 'address_id': 585903, 'fragment_unit': None, 'latitude': '34.1031283', 'intersection': None, 'fragment_pmbprefix': None, 'location_point': '(-118.326387,34.103128)', 'longitude': '-118.3263875', 'timezone': None, 'zip_longitude': '-118.3263875', 'statehouseholdincome': None, 'line2': None, 'pmsa': None, 'zip': '90028', 'countyhouseholdincome': None, 'county_name': 'Los Angeles', 'county': 'Los Angeles', 'fragment_suffix': None, 'fragment_street': 'Vine St', 'geocode_level': 'S', 'city_type': None, 'state_FIPS': '06', 'fragment_predir': None, 'fragment_postdir': None, 'congress_code': None, 'md': None, 'zip_latitude': '34.1031283', 'fragment_house': '1750', 'dma': None, 'city': 'Los Angeles', 'state_abbrev': 'CA', 'cbsa': None, 'fragment_pmbnumber': None, 'areahouseholdincome': None, 'area_code': None, 'daylight_savings': None, 'line1': '1750 vine st', 'msa': None, 'barcode_digits': None, 'county_FIPS': '037', 'block': None, 'city_abbreviation': None, 'last_mod_user_id': 62160}, 'loan_type_value': 'conventional', 'ucdp_cu_score_date': None, 'du_case_number': None, 'loan_officer_id': 62160, 'realtor_phone': '917033471111', 'loan_amount': '100000', 'file_source_api_key_id': None, 'ucdp_cu_score': None, 'borrower_name_suffix': None, 'loan_number': '2311000478', 'borrower_name': 'BradDemo111 11.16.23', 'coborrower_work_phone': '917033471111', 'create_user_id': 62160, 'coborrower_name': 'order tesr', 'loan_officer_name': 'Shubham Bahuguna', 'company_id': 19391, 'fmac_loan_prospector_key_number': None, 'revision_comments': None, 'borrower_name_salutation': None, 'is_revised': 0, 'realtor_alt_phone': '917033471111', 'fmae_casefile_id': None, 'do_not_submit_to_ucdp': 1, 'borrower_work_phone': '917033471111', 'coborrower_mobile_phone': '917033471111', 'loan_purpose_value': 'Purchase', 'ignore_payment_status_for_email': None, 'last_mod_user_id': 62160}, 'property_type_id': None, 'payment_portal_value': None, 'reassign_attempts_count': None, 'appraisal_status_value': 'assignment_ready', 'order_source_value': 'lenderx_appraisal_order', 'qc_submission_status': None, 'current_qc_submission_id': None, 'disclosure_release_date': '2024-04-04 06:47:57.324383-05', 'fha_case_number': None, 'order_priority_value': 'normal', 'realtor_contact': None, 'current_ucdp_submission_id': None, 'ucdp_workflow_instance_id': None, 'borrower_home_phone': None, 'order_resume_date': None, 'create_date': '2024-04-04 06:47:57.324383-05', 'ucdp_submission_status': None, 'is_qx_in_review': 0, 'appraisal_value': None, 'disclosure_met': 1, 'application_file_id': 250578, 'borrower_mobile_phone': None, 'nonoverrideable_ucdp_hard_stop_count': 0, 'actions_allowed': {}, 'current_ead_submission_id': None, 'coborrower_email': None, 'last_mod_date': '2024-04-04 06:47:57.324383-05', 'appraisal_order_id': 255949, 'coborrower_home_phone': None, 'completion_reminder_sent': None, 'comments': 'Test Order instructions', 'hvcc_compliant': 1, 'realtor_email': None, 'address_id': 585903, 'appraisal_purpose': None, 'payment_cc_auth': None, 'overrideable_ucdp_hard_stop_count': 0, 'auto_assignable': 1, 'is_paid': 1, 'appraiser_id': None, 'is_payment_by_form': 0, 'loan_type_value': None, 'appraisal_completion_date': None, 'needed_by_date': None, 'loan_officer_id': 62160, 'realtor_phone': None, 'payment_cc_last4': None, 'payment_cc_expire': None, 'access_information': None, 'payment_profile_id': None, 'loan_number': None, 'current_workflow_instance_id': '2eb98d06-f279-11ee-b2ff-1dd9ca5a73b4', 'borrower_name': 'BradDemo111 11.16.23', 'coborrower_work_phone': None, 'payment_customer_id': None, 'create_user_id': 62160, 'total_ucdp_hard_stop_count': 0, 'company': {'name': 'Encompass', 'preferences': {'lender_requested_delivery_date': 1, 'display_investor_information': 0}, 'branch': 'Main'}, 'borrower_paid': 0, 'coborrower_name': None, 'company_id': 19391, 'revision_comments': None, 'payment_cc_type': None, 'total_ead_hard_stop_count': 0, 'is_revised': 0, 'realtor_alt_phone': None, 'payment_cc_name': None, 'borrower_work_phone': None, 'coborrower_mobile_phone': None, 'current_request': {'appraisal_company': 'N/A', 'conditions_comment': None, 'days_out': None, 'appraisal_acceptance_negotiation_status_value': None, 'turn_time': None, 'estimated_inspection_date': None, 'accept_date': None, 'actual_inspection_date': None, 'expected_delivery_date': None, 'appraiser': 'N/A', 'appraisal_effective_date': None, 'appraisal_signature_date': None, 'condition_of_appraisal': None, 'request_status': 'N/A', 'schedule_inspection_time': None, 'appraisal_upload_time': None}, 'loan_purpose_value': None, 'payment_whopays': None, 'overrideable_ead_hard_stop_count': 0, 'lender_requested_delivery_date': '2024-04-29', 'last_mod_user_id': 62160, 'current_request_id': None}, {'qc_workflow_instance_id': None, 'payment_received_date': '2023-11-16 11:29:01.833666-06', 'nonoverrideable_ead_hard_stop_count': 0, 'revised_date': None, 'is_rushed': 0, 'borrower_email': None, 'appraiser_signed_report_date': None, 'assignment_attempt_standard': '47DF7A74-F568-11EE-AD75-ED99CA5A73B4', 'is_disclosed': 1, 'create_api_key_id': 154, 'assignment_attempt_company_wide': '47DF7E8E-F568-11EE-AD75-ED99CA5A73B4', 'borrower_date_paid': None, 'special_inspection_note': None, 'is_qx_processing': 0, 'appraisal_copied_to': None, 'borrower_appraisal_fee': None, 'application_file': {'do_not_submit_to_ead': 0, 'revised_date': None, 'global_file_id': '847eccfc-84a5-11ee-8d81-b38eca5a73b4', 'ucdp_doc_file_id': None, 'borrower_email': 'test@test.com', 'borrower_first_name': None, 'lp_key_number': None, 'ucdp_lca_score': None, 'create_api_key_id': 154, 'borrower_enters_payment_info': 0, 'property_type': {'display_order': 1, 'is_default': 0, 'property_type_id': 1, 'description': 'Single Family'}, 'payment_info_received': 1, 'fmae_lender_institution_id': None, 'property_type_id': 1, 'fmac_id_number': None, 'ucdp_lca_level': None, 'custom_id_1': '{21f72629-3be0-46fd-abb3-1ed7f5b0c3e5}', 'ucdp_business_unit_number': None, 'purchase_price': '100000.00', 'duplicate_loan_number': 0, 'estimated_value': None, 'fha_case_number': None, 'borrower_last_name': None, 'realtor_contact': 'BradDemo 111623', 'borrower_home_phone': '999-999-9999', 'duplicate_property_address': 1, 'create_date': '2023-11-16 11:29:01.833666-06', 'fmac_seller_id': None, 'application_file_id': 250372, 'borrower_mobile_phone': None, 'custom_id_2': 'Encompass', 'realtor_home_phone': '999-999-9999', 'loan_type': {'is_default': 0, 'display_sequence': 1, 'loan_type_value': 'conventional', 'description': 'Conventional'}, 'coborrower_email': None, 'duplicate_borrower_name': 1, 'last_mod_date': '2023-11-16 11:29:01.833666-06', 'coborrower_home_phone': None, 'comments': None, 'realtor_email': 'test@test.com', 'address_id': 585669, 'borrower_middle_name': None, 'processor_id': None, 'fmae_seller_number': None, 'address': {'last_mod_date': '2023-11-16 11:29:01.833666-06', 'tract': None, 'address_id': 585669, 'fragment_unit': None, 'latitude': '34.1031283', 'intersection': None, 'fragment_pmbprefix': None, 'location_point': '(-118.326387,34.103128)', 'longitude': '-118.3263875', 'timezone': None, 'zip_longitude': '-118.3263875', 'statehouseholdincome': None, 'line2': None, 'pmsa': None, 'zip': '90028', 'countyhouseholdincome': None, 'county_name': 'Los Angeles', 'county': 'Los Angeles', 'fragment_suffix': None, 'fragment_street': 'Vine St', 'geocode_level': 'S', 'city_type': None, 'state_FIPS': '06', 'fragment_predir': None, 'fragment_postdir': None, 'congress_code': None, 'md': None, 'zip_latitude': '34.1031283', 'fragment_house': '1750', 'dma': None, 'city': 'Los Angeles', 'state_abbrev': 'CA', 'cbsa': None, 'fragment_pmbnumber': None, 'areahouseholdincome': None, 'area_code': None, 'daylight_savings': None, 'line1': '1750 vine st', 'msa': None, 'barcode_digits': None, 'county_FIPS': '037', 'block': None, 'city_abbreviation': None, 'last_mod_user_id': 60142}, 'loan_type_value': 'conventional', 'ucdp_cu_score_date': None, 'du_case_number': None, 'loan_officer_id': 60143, 'realtor_phone': None, 'loan_amount': '100000.00', 'file_source_api_key_id': None, 'ucdp_cu_score': None, 'borrower_name_suffix': None, 'loan_number': '2311000478', 'borrower_name': 'BradDemo 111623', 'coborrower_work_phone': None, 'create_user_id': 60142, 'coborrower_name': '', 'loan_officer_name': 'Loan Officer', 'company_id': 19391, 'fmac_loan_prospector_key_number': None, 'revision_comments': None, 'borrower_name_salutation': None, 'is_revised': 0, 'realtor_alt_phone': None, 'fmae_casefile_id': None, 'do_not_submit_to_ucdp': 0, 'borrower_work_phone': None, 'coborrower_mobile_phone': None, 'loan_purpose_value': 'Purchase', 'ignore_payment_status_for_email': None, 'last_mod_user_id': 60142}, 'property_type_id': None, 'payment_portal_value': 'authorize_net', 'reassign_attempts_count': None, 'appraisal_status_value': 'assignment_ready', 'order_source_value': None, 'qc_submission_status': None, 'current_qc_submission_id': None, 'disclosure_release_date': '2023-11-16 11:29:01.833666-06', 'fha_case_number': None, 'order_priority_value': 'normal', 'realtor_contact': None, 'current_ucdp_submission_id': None, 'ucdp_workflow_instance_id': None, 'borrower_home_phone': None, 'order_resume_date': None, 'create_date': '2023-11-16 11:29:01.833666-06', 'ucdp_submission_status': None, 'is_qx_in_review': 0, 'appraisal_value': None, 'disclosure_met': 1, 'application_file_id': 250372, 'borrower_mobile_phone': None, 'nonoverrideable_ucdp_hard_stop_count': 0, 'actions_allowed': {}, 'current_ead_submission_id': None, 'coborrower_email': None, 'last_mod_date': '2023-11-16 11:29:01.833666-06', 'appraisal_order_id': 255755, 'coborrower_home_phone': None, 'completion_reminder_sent': None, 'comments': None, 'hvcc_compliant': 1, 'realtor_email': None, 'address_id': 585669, 'appraisal_purpose': None, 'payment_cc_auth': None, 'overrideable_ucdp_hard_stop_count': 0, 'auto_assignable': 1, 'is_paid': 1, 'appraiser_id': None, 'is_payment_by_form': 0, 'loan_type_value': None, 'appraisal_completion_date': None, 'payment_portal': {'name': 'Authorize.Net', 'payment_portal_value': 'authorize_net', 'description': 'Authorize.Net'}, 'needed_by_date': None, 'loan_officer_id': 60143, 'realtor_phone': None, 'payment_cc_last4': None, 'payment_cc_expire': None, 'access_information': None, 'payment_profile_id': None, 'loan_number': None, 'current_workflow_instance_id': 'a29346be-84a5-11ee-8909-b38eca5a73b4', 'borrower_name': 'BradDemo 111623', 'coborrower_work_phone': None, 'payment_customer_id': None, 'create_user_id': 60142, 'total_ucdp_hard_stop_count': 0, 'company': {'name': 'Encompass', 'preferences': {'lender_requested_delivery_date': 1, 'display_investor_information': 0}, 'branch': 'Main'}, 'borrower_paid': 0, 'coborrower_name': None, 'company_id': 19391, 'revision_comments': None, 'payment_cc_type': None, 'total_ead_hard_stop_count': 0, 'is_revised': 0, 'realtor_alt_phone': None, 'payment_cc_name': None, 'borrower_work_phone': None, 'coborrower_mobile_phone': None, 'current_request': {'appraisal_company': 'N/A', 'conditions_comment': None, 'days_out': None, 'appraisal_acceptance_negotiation_status_value': None, 'turn_time': None, 'estimated_inspection_date': None, 'accept_date': None, 'actual_inspection_date': None, 'expected_delivery_date': None, 'appraiser': 'N/A', 'appraisal_effective_date': None, 'appraisal_signature_date': None, 'condition_of_appraisal': None, 'request_status': 'N/A', 'schedule_inspection_time': None, 'appraisal_upload_time': None}, 'loan_purpose_value': None, 'payment_whopays': 'paid_at_closing', 'overrideable_ead_hard_stop_count': 0, 'lender_requested_delivery_date': '2023-11-27', 'last_mod_user_id': 60142, 'current_request_id': None}, {'qc_workflow_instance_id': None, 'payment_received_date': '2023-11-16 11:28:11.9958-06', 'nonoverrideable_ead_hard_stop_count': 0, 'revised_date': None, 'is_rushed': 0, 'borrower_email': None, 'appraiser_signed_report_date': None, 'assignment_attempt_standard': '47DF7A74-F568-11EE-AD75-ED99CA5A73B4', 'is_disclosed': 1, 'create_api_key_id': 154, 'assignment_attempt_company_wide': '47DF7E8E-F568-11EE-AD75-ED99CA5A73B4', 'borrower_date_paid': None, 'special_inspection_note': None, 'is_qx_processing': 0, 'appraisal_copied_to': None, 'borrower_appraisal_fee': None, 'application_file': {'do_not_submit_to_ead': 0, 'revised_date': None, 'global_file_id': '847eccfc-84a5-11ee-8d81-b38eca5a73b4', 'ucdp_doc_file_id': None, 'borrower_email': 'test@test.com', 'borrower_first_name': None, 'lp_key_number': None, 'ucdp_lca_score': None, 'create_api_key_id': 154, 'borrower_enters_payment_info': 0, 'property_type': {'display_order': 1, 'is_default': 0, 'property_type_id': 1, 'description': 'Single Family'}, 'payment_info_received': 1, 'fmae_lender_institution_id': None, 'property_type_id': 1, 'fmac_id_number': None, 'ucdp_lca_level': None, 'custom_id_1': '{21f72629-3be0-46fd-abb3-1ed7f5b0c3e5}', 'ucdp_business_unit_number': None, 'purchase_price': '100000.00', 'duplicate_loan_number': 0, 'estimated_value': None, 'fha_case_number': None, 'borrower_last_name': None, 'realtor_contact': 'BradDemo 111623', 'borrower_home_phone': '999-999-9999', 'duplicate_property_address': 0, 'create_date': '2023-11-16 11:28:11.9958-06', 'fmac_seller_id': None, 'application_file_id': 250371, 'borrower_mobile_phone': None, 'custom_id_2': 'Encompass', 'realtor_home_phone': '999-999-9999', 'loan_type': {'is_default': 0, 'display_sequence': 1, 'loan_type_value': 'conventional', 'description': 'Conventional'}, 'coborrower_email': None, 'duplicate_borrower_name': 0, 'last_mod_date': '2023-11-16 11:33:13.811206-06', 'coborrower_home_phone': None, 'comments': None, 'realtor_email': 'test@test.com', 'address_id': 585668, 'borrower_middle_name': None, 'processor_id': None, 'fmae_seller_number': None, 'address': {'last_mod_date': '2023-11-16 11:33:13.811206-06', 'tract': None, 'address_id': 585668, 'fragment_unit': None, 'latitude': '34.1031283', 'intersection': None, 'fragment_pmbprefix': None, 'location_point': '(-118.326387,34.103128)', 'longitude': '-118.3263875', 'timezone': None, 'zip_longitude': '-118.3263875', 'statehouseholdincome': None, 'line2': None, 'pmsa': None, 'zip': '90028', 'countyhouseholdincome': None, 'county_name': 'Los Angeles', 'county': 'Los Angeles', 'fragment_suffix': None, 'fragment_street': 'Vine St', 'geocode_level': 'S', 'city_type': None, 'state_FIPS': '06', 'fragment_predir': None, 'fragment_postdir': None, 'congress_code': None, 'md': None, 'zip_latitude': '34.1031283', 'fragment_house': '1750', 'dma': None, 'city': 'Los Angeles', 'state_abbrev': 'CA', 'cbsa': None, 'fragment_pmbnumber': None, 'areahouseholdincome': None, 'area_code': None, 'daylight_savings': None, 'line1': '1750 vine st', 'msa': None, 'barcode_digits': None, 'county_FIPS': '037', 'block': None, 'city_abbreviation': None, 'last_mod_user_id': 60142}, 'loan_type_value': 'conventional', 'ucdp_cu_score_date': None, 'du_case_number': None, 'loan_officer_id': 60143, 'realtor_phone': None, 'loan_amount': '100000.00', 'file_source_api_key_id': None, 'ucdp_cu_score': None, 'borrower_name_suffix': None, 'loan_number': '2311000478', 'borrower_name': 'BradDemo111  11.16.23', 'coborrower_work_phone': None, 'create_user_id': 60142, 'coborrower_name': '', 'loan_officer_name': 'Loan Officer', 'company_id': 19391, 'fmac_loan_prospector_key_number': None, 'revision_comments': None, 'borrower_name_salutation': None, 'is_revised': 0, 'realtor_alt_phone': None, 'fmae_casefile_id': None, 'do_not_submit_to_ucdp': 0, 'borrower_work_phone': None, 'coborrower_mobile_phone': None, 'loan_purpose_value': 'Purchase', 'ignore_payment_status_for_email': None, 'last_mod_user_id': 60142}, 'property_type_id': None, 'payment_portal_value': 'authorize_net', 'reassign_attempts_count': None, 'appraisal_status_value': 'assignment_ready', 'order_source_value': None, 'qc_submission_status': None, 'current_qc_submission_id': None, 'disclosure_release_date': '2023-11-16 11:28:11.9958-06', 'fha_case_number': None, 'order_priority_value': 'normal', 'realtor_contact': None, 'current_ucdp_submission_id': None, 'ucdp_workflow_instance_id': None, 'borrower_home_phone': None, 'order_resume_date': None, 'create_date': '2023-11-16 11:28:11.9958-06', 'ucdp_submission_status': None, 'is_qx_in_review': 0, 'appraisal_value': None, 'disclosure_met': 1, 'application_file_id': 250371, 'borrower_mobile_phone': None, 'nonoverrideable_ucdp_hard_stop_count': 0, 'actions_allowed': {}, 'current_ead_submission_id': None, 'coborrower_email': None, 'last_mod_date': '2023-11-16 11:28:11.9958-06', 'appraisal_order_id': 255754, 'coborrower_home_phone': None, 'completion_reminder_sent': None, 'comments': None, 'hvcc_compliant': 1, 'realtor_email': None, 'address_id': 585668, 'appraisal_purpose': None, 'payment_cc_auth': None, 'overrideable_ucdp_hard_stop_count': 0, 'auto_assignable': 1, 'is_paid': 1, 'appraiser_id': None, 'is_payment_by_form': 0, 'loan_type_value': None, 'appraisal_completion_date': None, 'payment_portal': {'name': 'Authorize.Net', 'payment_portal_value': 'authorize_net', 'description': 'Authorize.Net'}, 'needed_by_date': None, 'loan_officer_id': 60143, 'realtor_phone': None, 'payment_cc_last4': None, 'payment_cc_expire': None, 'access_information': None, 'payment_profile_id': None, 'loan_number': None, 'current_workflow_instance_id': '85246c16-84a5-11ee-8d81-b38eca5a73b4', 'borrower_name': 'BradDemo 111623', 'coborrower_work_phone': None, 'payment_customer_id': None, 'create_user_id': 60142, 'total_ucdp_hard_stop_count': 0, 'company': {'name': 'Encompass', 'preferences': {'lender_requested_delivery_date': 1, 'display_investor_information': 0}, 'branch': 'Main'}, 'borrower_paid': 0, 'coborrower_name': None, 'company_id': 19391, 'revision_comments': None, 'payment_cc_type': None, 'total_ead_hard_stop_count': 0, 'is_revised': 0, 'realtor_alt_phone': None, 'payment_cc_name': None, 'borrower_work_phone': None, 'coborrower_mobile_phone': None, 'current_request': {'appraisal_company': 'N/A', 'conditions_comment': None, 'days_out': None, 'appraisal_acceptance_negotiation_status_value': None, 'turn_time': None, 'estimated_inspection_date': None, 'accept_date': None, 'actual_inspection_date': None, 'expected_delivery_date': None, 'appraiser': 'N/A', 'appraisal_effective_date': None, 'appraisal_signature_date': None, 'condition_of_appraisal': None, 'request_status': 'N/A', 'schedule_inspection_time': None, 'appraisal_upload_time': None}, 'loan_purpose_value': None, 'payment_whopays': 'paid_at_closing', 'overrideable_ead_hard_stop_count': 0, 'lender_requested_delivery_date': '2023-11-27', 'last_mod_user_id': 60142, 'current_request_id': None}], 'total': '4'}
+2024-04-08 10:55:15,569 - ERROR - Exception on /api/webhook [POST]
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 68, in wrapper
+    response = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 81, in webhook_call
+    data= order_creation(url)
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\routes\webhook.py", line 68, in order_creation
+    result=updateLXOrder(credentials,dataobject,app_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\Comm\UpdateLXOrder.py", line 108, in updateLXOrder
+    return json.loads(resp)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjoli\Downloads\LenderX\LenderXtest Python\LenderXtest\main.py", line 72, in wrapper
+    log_failed_call(endpoint,req_call,response, str(e))
+                                      ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+2024-04-08 10:59:54,474 - INFO - Successful call to webhook.webhook_call  endpoint
+2024-04-08 10:59:54,475 - INFO - Request Call :<Request 'http://127.0.0.1:5000/api/webhook' [POST]>
+2024-04-08 10:59:54,476 - INFO - response status: {'success': 0, 'exception': {'msg': 'At least one form is required for the appraisal order.', 'type': 'bad-request'}, 'error': 'At least one form is required for the appraisal order.'}

@@ -1,8 +1,8 @@
 from flask import Flask, request
 import logging
 from logging.handlers import RotatingFileHandler
-from Comm import createLXOrder
-from routes import GetLoanType,PostComment,getCannedComment, webhook,updateappfile, getOrigin, GetLoanPurpose, CreateOrder, GetForms, GetInvestors, GetLoanDocument, GetLoanOfficer, GetLoanPermissions, GetLoanPreferences, GetLoanPrograms, GetOrders, GetPaymentSouce, GetPropertyType, GetStates, GetWatchers, UpdateLXOrder, updateorder, uploaddoc, getOrder
+from Comm import GetAppFile, UpdateLXOrder, createLXOrder
+from routes import GetLoanType,PostComment,getCannedComment, webhook,updateappfile, getOrigin, GetLoanPurpose, CreateOrder, GetForms, GetInvestors, GetLoanDocument, GetLoanOfficer, GetLoanPermissions, GetLoanPreferences, GetLoanPrograms, GetOrders, GetPaymentSouce, GetPropertyType, GetStates, GetWatchers, updateorder, uploaddoc, getOrder
 import gatherdata
 from flask_cors import CORS
 
@@ -19,6 +19,7 @@ app.logger.setLevel(logging.INFO)
 # Register blueprints (routes) from different files
 app.register_blueprint(GetLoanType.app)
 app.register_blueprint(getOrigin.app)
+# app.register_blueprint(GetAppFile.app)
 app.register_blueprint(GetForms.app)
 app.register_blueprint(GetInvestors.app)
 app.register_blueprint(GetLoanDocument.app)
@@ -32,7 +33,7 @@ app.register_blueprint(GetPaymentSouce.app)
 app.register_blueprint(GetPropertyType.app)
 app.register_blueprint(uploaddoc.app)
 app.register_blueprint(updateorder.app)
-app.register_blueprint(UpdateLXOrder.app)
+# app.register_blueprint(UpdateLXOrder.app)
 app.register_blueprint(CreateOrder.app)
 app.register_blueprint(GetWatchers.app)
 app.register_blueprint(GetStates.app)

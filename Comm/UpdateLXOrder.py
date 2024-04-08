@@ -15,10 +15,10 @@ class XCredentials:
 
    
 
-def create_lx_order(credentials,orderData):
-    print("order",orderData['city'])
+def update_lx_order(credentials,orderData,app_id,order_id):
+    # print("order",orderData['city'])
     message_dt = datetime.utcnow()
-    resource = "/appraisal/order/"
+    resource = f"/appraisal/order/{order_id}"
     request =json.dumps({
         "application_file": {
             "borrower_first_name": orderData["borrower_firstName"],
@@ -80,20 +80,20 @@ def create_lx_order(credentials,orderData):
         "refundable": True
         } for form in orderData['Forms']],
         "borrower_email": orderData["borrower_email"],
-        "application_file_id": "",
+        "application_file_id": app_id,
         "lender_requested_delivery_date": orderData['due_date']
     })
     print(request)
-    message = build_message_string("POST", "", resource, "", f"x-cor-auth-userid:{credentials.LXUser}", message_dt)
+    message = build_message_string("PUT", "", resource, "", f"x-cor-auth-userid:{credentials.LXUser}", message_dt)
     message = calculate_corvisa_signature(message, credentials.APISecret)
     print("message: ",message)
     url = f"{credentials.BaseURL}{resource}"
     print("url: ",url)
-    response = perform_lender_x_json_call(url, "POST", credentials.APIKey, credentials.LXUser, message, message_dt, request)
+    response = perform_lender_x_json_call(url, "PUT", credentials.APIKey, credentials.LXUser, message, message_dt, request)
     return response
 
 
-def createOrder(credentials,orderData):
+def updateLXOrder(credentials,orderData,app_id,order_id):
     LXUser = credentials['lx_user']
     APIKey = credentials['APIKey']
     APISecret = credentials['APISecret']
@@ -103,7 +103,7 @@ def createOrder(credentials,orderData):
     # Create a credentials object
     cred = XCredentials(LXUser, APIKey, APISecret, BaseURL)
     # Get loan types
-    resp = create_lx_order(cred,orderData)
+    resp = update_lx_order(cred,orderData,app_id,order_id)
  
     return json.loads(resp)
 

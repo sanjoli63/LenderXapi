@@ -25,26 +25,24 @@ class XCredentials:
 
    
 
-def update_order(credentials,order_id):
+def update_order(credentials,order_id,updateData):
     message_dt = datetime.utcnow()
     resource = f"/appraisal/order/{order_id}"
-    request='''{
-    "forms": [
-        {
-            "no_delete": false,
-            "display_order": 974550,
-            "appraisal_type_value": "Conventional-AppraisalDeskReview2Day",
-            "loan_type_value": "conventional",
-            "description": "Appraisal Desk Review - 2 Day",
-            "item_id": "",
-            "amount": "100",
-            "expanded_description": "This form provides a collateral risk assessment based on an analysis of a prior appraisal (or other valuation product). A physical inspection of the subject property and comparables is not performed.",
-            "quoted_amount": "",
-            "refundable": true
-        }
-    ],
+    request=json.dumps({
+   "Forms" : [{
+        "no_delete": False,
+        "display_order": form['display_order'],
+        "appraisal_type_value": form['appraisal_type_value'],
+        "loan_type_value": form['loan_type_value'],
+        "description": form['description'],
+        "item_id": "",
+        "amount": form['amount'],
+        "expanded_description": form['expanded_description'],
+        "quoted_amount": "",
+        "refundable": True
+        } for form in updateData['Forms']],
     "application_file_id": "250571"
-   }'''
+   })
     message = build_message_string("PUT", "", resource, "", f"x-cor-auth-userid:{credentials.LXUser}", message_dt)
     message = calculate_corvisa_signature(message, credentials.APISecret)
     print("message: ",message)
@@ -62,12 +60,13 @@ def updateOrder():
     APISecret = "mupojP8O3yCkQX3mWv2nlA"
     BaseURL = "https://app.sandbox1.lenderx-labs.com"
     order_id="255943"
+    updateData=""
 
     # Create a credentials object
     cred = XCredentials(LXUser, APIKey, APISecret, BaseURL)
 
     # Get loan types
-    resp = update_order(cred,order_id)
+    resp = update_order(cred,order_id,updateData)
  
     return json.loads(resp)
 

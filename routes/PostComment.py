@@ -15,7 +15,7 @@ class XCredentials:
         self.BaseURL = BaseURL
 
 def post_comment(credentials):
-    body={
+    body=json.dumps({
     "data" : {
     "recipient_role" : [
     "ia"
@@ -28,15 +28,15 @@ def post_comment(credentials):
     "appfile" : 250581,
     "body" : "Test Comment",
     "forward_of" : "",
-    "component" : "appfile",
+    "component" : "appraisal",    
     "canned_comment_id" : "",
     "recipient_id" : ""
         }
-    }
+    })
     return execute_lx_api_call(credentials, body, "/communication", "", "POST")
 
 
-@app.route('/api/cannedcomment', methods=['GET'])
+@app.route('/api/comment', methods=['GET'])
 def canned_comment():
     # TODO implement
     lx_user = request.args.get('lx_user')
